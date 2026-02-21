@@ -8,3 +8,4 @@ extends Area2D
 
 func execute_event(caller):
 	caller.add_child(weapon.instantiate())
+	queue_free()

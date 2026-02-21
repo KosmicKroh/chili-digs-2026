@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wknd"]
 
-[node name="ExampleInteractable" type="Area2D"]
+[node name="stapler_pick_up" type="Area2D"]
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_u2mos")

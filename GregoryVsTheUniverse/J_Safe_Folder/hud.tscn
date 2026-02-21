@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4s51dcewmwfv"]
+[gd_scene load_steps=10 format=3 uid="uid://b4s51dcewmwfv"]
 
 [ext_resource type="FontFile" uid="uid://wsrhq6xolw6f" path="res://WalterTurncoat-Regular.ttf" id="1_frta0"]
-[ext_resource type="Script" path="res://J_Safe_Folder/hud.gd" id="1_fvc4k"]
+[ext_resource type="Script" uid="uid://c4sohvixk833b" path="res://J_Safe_Folder/hud.gd" id="1_fvc4k"]
+[ext_resource type="Texture2D" uid="uid://dybweeqn0v7l5" path="res://UI-NamePlate1.png" id="3_c2bgv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvc4k"]
 bg_color = Color(0.44329184, 0.09928586, 0.17995825, 1)
@@ -21,7 +22,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ybja"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.32244626, 0.17516217, 2.4065375e-08, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -31,7 +32,7 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxm7t"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.87500936, 0.80123675, 0.3078531, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -71,10 +72,11 @@ value = 80.0
 show_percentage = false
 
 [node name="EnemyCounterBar" type="ProgressBar" parent="."]
-offset_left = 500.0
-offset_top = 30.0
-offset_right = 800.0
-offset_bottom = 70.0
+offset_left = 496.0
+offset_top = 17.0
+offset_right = 736.0
+offset_bottom = 79.66667
+scale = Vector2(1.5, 1.5)
 theme_override_fonts/font = ExtResource("1_frta0")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/background = SubResource("StyleBoxFlat_0ybja")
@@ -82,6 +84,11 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_dxm7t")
 step = 1.0
 value = 80.0
 show_percentage = false
+
+[node name="UiNamePlate1" type="Sprite2D" parent="EnemyCounterBar"]
+position = Vector2(118.66666, 31.666674)
+scale = Vector2(0.461111, 0.461111)
+texture = ExtResource("3_c2bgv")
 
 [node name="StaminaBar" type="ProgressBar" parent="."]
 offset_left = 25.0

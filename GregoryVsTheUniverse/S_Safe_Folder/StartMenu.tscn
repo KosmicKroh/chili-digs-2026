@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dvt3tionrfyms"]
+
+[node name="StartMenu" type="Node2D"]
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = 846.0
+offset_top = 289.0
+offset_right = 968.0
+offset_bottom = 305.0

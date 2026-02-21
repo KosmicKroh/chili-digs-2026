@@ -10,10 +10,17 @@ config_version=5
 
 [application]
 
-config/name="Chili DIGS 2026"
+config/name="Gregory vs The Universe"
+config/description="Disgruntled employee takes out his frustration on the universe with the power of his trusty stapler in a top-down shooter with procedurally generated offices."
 run/main_scene="uid://cwa32cindg5rg"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [rendering]
 

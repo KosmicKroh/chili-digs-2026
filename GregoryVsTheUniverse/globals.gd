@@ -9,6 +9,7 @@ var playerHealth:float = 100.0
 var musicVolume:float = 70.0
 var sfxVolume:float = 70.0
 var playerPosition: Vector2
+var shakeEffect:float = 0.0
 var rangedEnemyTextures: Array = [preload("res://enemySprites/Character-worker1.webp"),
 								preload("res://enemySprites/Character-worker2.webp"),
 								preload("res://enemySprites/Character-worker3.webp"),
@@ -32,3 +33,5 @@ func _ready():
 func _process(delta):
 	if rollCooldown > 0:
 		rollCooldown -= delta
+	if shakeEffect > 0:
+		shakeEffect -= 3*delta

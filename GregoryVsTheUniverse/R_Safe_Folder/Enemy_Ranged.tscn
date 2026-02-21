@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2xa75n84pud2"]
+[gd_scene load_steps=7 format=3 uid="uid://c2xa75n84pud2"]
 
 [ext_resource type="Script" uid="uid://bk87e021tt03f" path="res://R_Safe_Folder/enemy.gd" id="1_8yixw"]
+[ext_resource type="PackedScene" uid="uid://bi8ratggbl1hq" path="res://R_Safe_Folder/HurtBox.tscn" id="2_1ccu5"]
 [ext_resource type="Texture2D" uid="uid://c08iarj6g5qdw" path="res://icon.svg" id="2_1lvrl"]
 [ext_resource type="PackedScene" uid="uid://ctkr8vu8wemqp" path="res://R_Safe_Folder/Behavior/Ranged_Enemy_Behavior.tscn" id="2_cd2vf"]
 [ext_resource type="PackedScene" uid="uid://csvquk3pgcp8y" path="res://R_Safe_Folder/Pen.tscn" id="3_1lvrl"]
@@ -10,6 +11,8 @@
 [node name="EnemyRanged" type="CharacterBody2D" node_paths=PackedStringArray("weapon")]
 script = ExtResource("1_8yixw")
 weapon = NodePath("Pen")
+
+[node name="HurtBox" parent="." instance=ExtResource("2_1ccu5")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1ccu5")

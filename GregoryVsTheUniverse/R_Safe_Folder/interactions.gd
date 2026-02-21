@@ -5,4 +5,4 @@ extends Area2D
 
 func _on_area_entered(area: Area2D) -> void:
 	#if Input.action_just_released("e"):
-	area.execute_event()
+	area.execute_event(get_parent())

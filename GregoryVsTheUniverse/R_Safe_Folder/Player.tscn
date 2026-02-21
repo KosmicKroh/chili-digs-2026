@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://0xxlok830twu"]
+[gd_scene load_steps=7 format=3 uid="uid://0xxlok830twu"]
 
 [ext_resource type="Script" uid="uid://2wdm3hoq08hl" path="res://R_Safe_Folder/player.gd" id="1_fagkk"]
 [ext_resource type="Texture2D" uid="uid://btfe80wn7mgv8" path="res://Character-Gregory.webp" id="2_17vdu"]
 [ext_resource type="PackedScene" uid="uid://bjnmx3rio0thh" path="res://R_Safe_Folder/Behavior/Player_Behavior.tscn" id="3_0vllw"]
 [ext_resource type="PackedScene" uid="uid://bi8ratggbl1hq" path="res://R_Safe_Folder/HurtBox.tscn" id="4_17vdu"]
+[ext_resource type="PackedScene" uid="uid://dxd8hjhhh3lf3" path="res://R_Safe_Folder/Interactions.tscn" id="5_fenry"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tymu4"]
 
@@ -22,3 +23,8 @@ texture = ExtResource("2_17vdu")
 
 [node name="HurtBox" parent="." instance=ExtResource("4_17vdu")]
 scale = Vector2(0.1994295, 0.4394303)
+collision_layer = 8
+collision_mask = 4
+
+[node name="Interactions" parent="." instance=ExtResource("5_fenry")]
+scale = Vector2(1.98538, 3.0059824)

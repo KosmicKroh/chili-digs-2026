@@ -4,5 +4,7 @@ extends Area2D
 # This goes on a Area2D
 # The Interactions scene goes on what you want to detect it
 
-func execute_event():
-	print("event run")
+@export var weapon: PackedScene = preload("res://R_Safe_Folder/Gun.tscn")
+
+func execute_event(caller):
+	caller.add_child(weapon.instantiate())

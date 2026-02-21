@@ -4,7 +4,8 @@ var room_layouts = [
 	load("res://J_Safe_Folder/room_bullpin.tscn"),
 	load("res://J_Safe_Folder/room_conference.tscn"),
 	load("res://J_Safe_Folder/room_hallway.tscn"),
-	load("res://J_Safe_Folder/room_waiting.tscn")
+	load("res://J_Safe_Folder/room_waiting.tscn"),
+	load("res://J_Safe_Folder/room_office.tscn")
 ]
 
 @export var roomCount:int = 100

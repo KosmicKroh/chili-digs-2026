@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://t7sesq371o65"]
+[gd_scene load_steps=10 format=3 uid="uid://cgbwr3fvnvt7o"]
 
 [ext_resource type="Texture2D" uid="uid://b6ws4pot5atqm" path="res://Room-Waiting.png" id="1_v8qw5"]
 
@@ -9,13 +9,13 @@ size = Vector2(30, 497)
 size = Vector2(30, 266)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_754lg"]
-size = Vector2(30.000008, 375)
+size = Vector2(30.000008, 370)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lfhh"]
 size = Vector2(30, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01lii"]
-size = Vector2(30, 105)
+size = Vector2(30, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_soopq"]
 size = Vector2(128, 232)
@@ -50,7 +50,7 @@ position = Vector2(15, -201.5)
 shape = SubResource("RectangleShape2D_q5ba3")
 
 [node name="Wall5" type="StaticBody2D" parent="Layout"]
-position = Vector2(402, 201)
+position = Vector2(397, 201)
 
 [node name="Rect" type="ColorRect" parent="Layout/Wall5"]
 offset_left = -27.0
@@ -69,13 +69,13 @@ rotation = 1.5707964
 
 [node name="Rect" type="ColorRect" parent="Layout/Wall6"]
 offset_left = -27.0
-offset_top = -526.05493
+offset_top = -521.0294
 offset_right = 3.0
 offset_bottom = -151.00003
 color = Color(0, 0, 0, 1)
 
 [node name="Collider" type="CollisionShape2D" parent="Layout/Wall6"]
-position = Vector2(-12.000015, -338.5)
+position = Vector2(-12.000015, -336)
 shape = SubResource("RectangleShape2D_754lg")
 
 [node name="Wall7" type="StaticBody2D" parent="Layout"]
@@ -99,13 +99,13 @@ rotation = 1.5707964
 
 [node name="Rect" type="ColorRect" parent="Layout/Wall8"]
 offset_left = -25.000015
-offset_top = -256.09628
+offset_top = -251.15015
 offset_right = 4.9999847
 offset_bottom = -150.30331
 color = Color(0, 0, 0, 1)
 
 [node name="Collider" type="CollisionShape2D" parent="Layout/Wall8"]
-position = Vector2(-10.000015, -203.49998)
+position = Vector2(-10.000015, -200.99998)
 shape = SubResource("RectangleShape2D_01lii")
 
 [node name="Wall9" type="StaticBody2D" parent="Layout"]
@@ -117,7 +117,7 @@ shape = SubResource("RectangleShape2D_soopq")
 [node name="Exits" type="Node2D" parent="."]
 
 [node name="Exit2" type="Marker2D" parent="Exits"]
-position = Vector2(405, 120)
+position = Vector2(400, 120)
 gizmo_extents = 50.0
 
 [node name="Doorway" type="StaticBody2D" parent="Exits/Exit2"]

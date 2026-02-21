@@ -1,21 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://bts6tls0jugqb"]
+[gd_scene load_steps=7 format=3 uid="uid://dylv3geu5p2a5"]
 
-[ext_resource type="Texture2D" uid="uid://dvlnxj51jxxm2" path="res://Room-Office.png" id="1_y88hw"]
+[ext_resource type="Texture2D" uid="uid://isasvw327cn4" path="res://Room-Elevator.png" id="1_u246t"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5ba3"]
-size = Vector2(30, 300)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q855j"]
-size = Vector2(30, 300)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dvtf"]
+size = Vector2(299, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ne1de"]
 size = Vector2(30, 50)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_67diu"]
-size = Vector2(45, 112)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2hh0q"]
-radius = 63.387695
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpoie"]
+size = Vector2(50, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hflc"]
 size = Vector2(30, 200)
@@ -23,7 +17,7 @@ size = Vector2(30, 200)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6aqfe"]
 size = Vector2(277, 282)
 
-[node name="room-office" type="Node2D"]
+[node name="room-elevator" type="Node2D"]
 
 [node name="Layout" type="Node2D" parent="."]
 
@@ -31,34 +25,21 @@ size = Vector2(277, 282)
 offset_top = -150.0
 offset_right = 300.0
 offset_bottom = 150.0
-texture = ExtResource("1_y88hw")
+texture = ExtResource("1_u246t")
 
-[node name="Wall4" type="StaticBody2D" parent="Layout"]
-position = Vector2(0, 300)
-
-[node name="Rect" type="ColorRect" parent="Layout/Wall4"]
-offset_top = -450.0
-offset_right = 30.0
-offset_bottom = -150.0
-color = Color(0, 0, 0, 1)
-
-[node name="Collider" type="CollisionShape2D" parent="Layout/Wall4"]
-position = Vector2(15, -300)
-shape = SubResource("RectangleShape2D_q5ba3")
-
-[node name="Wall5" type="StaticBody2D" parent="Layout"]
+[node name="Wall1" type="StaticBody2D" parent="Layout"]
 position = Vector2(297, 331)
 
-[node name="Rect" type="ColorRect" parent="Layout/Wall5"]
-offset_left = -27.0
+[node name="Rect" type="ColorRect" parent="Layout/Wall1"]
+offset_left = -297.0
 offset_top = -481.0
 offset_right = 3.0
-offset_bottom = -181.0
+offset_bottom = -451.0
 color = Color(0, 0, 0, 1)
 
-[node name="Collider" type="CollisionShape2D" parent="Layout/Wall5"]
-position = Vector2(-12, -331)
-shape = SubResource("RectangleShape2D_q855j")
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall1"]
+position = Vector2(-146.5, -466)
+shape = SubResource("RectangleShape2D_8dvtf")
 
 [node name="Wall8" type="StaticBody2D" parent="Layout"]
 position = Vector2(44, 145)
@@ -74,6 +55,58 @@ color = Color(0, 0, 0, 1)
 [node name="Collider" type="CollisionShape2D" parent="Layout/Wall8"]
 position = Vector2(-10.000015, -231)
 shape = SubResource("RectangleShape2D_ne1de")
+
+[node name="Wall9" type="StaticBody2D" parent="Layout"]
+position = Vector2(300, 100)
+rotation = 1.5707964
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall9"]
+offset_right = 50.0
+offset_bottom = 30.101501
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall9"]
+position = Vector2(25, 15)
+shape = SubResource("RectangleShape2D_fpoie")
+
+[node name="Wall10" type="StaticBody2D" parent="Layout"]
+position = Vector2(30, 100)
+rotation = 1.5707964
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall10"]
+offset_right = 50.0
+offset_bottom = 30.101501
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall10"]
+position = Vector2(25, 15)
+shape = SubResource("RectangleShape2D_fpoie")
+
+[node name="Wall14" type="StaticBody2D" parent="Layout"]
+position = Vector2(30, -150)
+rotation = 1.5707964
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall14"]
+offset_right = 50.0
+offset_bottom = 30.101501
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall14"]
+position = Vector2(25, 15)
+shape = SubResource("RectangleShape2D_fpoie")
+
+[node name="Wall15" type="StaticBody2D" parent="Layout"]
+position = Vector2(300, -150)
+rotation = 1.5707964
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall15"]
+offset_right = 50.0
+offset_bottom = 30.101501
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall15"]
+position = Vector2(25, 15)
+shape = SubResource("RectangleShape2D_fpoie")
 
 [node name="Wall12" type="StaticBody2D" parent="Layout"]
 position = Vector2(44, -125)
@@ -120,23 +153,27 @@ color = Color(0, 0, 0, 1)
 position = Vector2(-10.000015, -231)
 shape = SubResource("RectangleShape2D_ne1de")
 
-[node name="Wall9" type="StaticBody2D" parent="Layout"]
-
-[node name="Collider" type="CollisionShape2D" parent="Layout/Wall9"]
-position = Vector2(272.5, -69)
-shape = SubResource("RectangleShape2D_67diu")
-
-[node name="Wall10" type="StaticBody2D" parent="Layout"]
-
-[node name="Collider" type="CollisionShape2D" parent="Layout/Wall10"]
-position = Vector2(85, 55)
-shape = SubResource("CircleShape2D_2hh0q")
-
 [node name="Exits" type="Node2D" parent="."]
 
+[node name="Exit1" type="Marker2D" parent="Exits"]
+position = Vector2(300, 0)
+gizmo_extents = 50.0
+
+[node name="Doorway" type="StaticBody2D" parent="Exits/Exit1"]
+
+[node name="Rect" type="ColorRect" parent="Exits/Exit1/Doorway"]
+offset_left = -30.0
+offset_top = -100.0
+offset_bottom = 100.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Exits/Exit1/Doorway"]
+position = Vector2(-15, 0)
+shape = SubResource("RectangleShape2D_0hflc")
+debug_color = Color(0.32941177, 0.6117647, 0.32941177, 0.41960785)
+
 [node name="Exit2" type="Marker2D" parent="Exits"]
-position = Vector2(150, -150)
-rotation = -1.5707964
+rotation = -3.1415927
 gizmo_extents = 50.0
 
 [node name="Doorway" type="StaticBody2D" parent="Exits/Exit2"]
@@ -171,12 +208,6 @@ shape = SubResource("RectangleShape2D_0hflc")
 debug_color = Color(0.32941177, 0.6117647, 0.32941177, 0.41960785)
 
 [node name="Spawns" type="Node2D" parent="."]
-
-[node name="Spawn1" type="Marker2D" parent="Spawns"]
-position = Vector2(86, -61)
-
-[node name="Spawn2" type="Marker2D" parent="Spawns"]
-position = Vector2(216, 54)
 
 [node name="Overlap" type="Area2D" parent="."]
 position = Vector2(-107, 188)

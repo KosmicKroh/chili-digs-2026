@@ -1,5 +1,6 @@
 extends Node2D
 
+var elevator = load("res://J_Safe_Folder/room_elevator.tscn")
 var room_layouts = [
 	load("res://J_Safe_Folder/room_bullpin.tscn"),
 	load("res://J_Safe_Folder/room_conference.tscn"),
@@ -8,7 +9,7 @@ var room_layouts = [
 	load("res://J_Safe_Folder/room_office.tscn")
 ]
 
-@export var roomCount:int = 100
+@export var roomCount:int = 30
 @export var enemyCount:int = 10
 var availableExits = []
 var newExitIndex:int = 0
@@ -19,7 +20,7 @@ var latestRoom:Node = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var spawnRoom = room_layouts[0].instantiate()
+	var spawnRoom = elevator.instantiate()
 	add_child(spawnRoom)
 	for exit in spawnRoom.find_child("Exits").get_children():
 		availableExits.append(exit)

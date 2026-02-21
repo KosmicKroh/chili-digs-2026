@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvt3tionrfyms"]
+
+[ext_resource type="FontFile" uid="uid://wsrhq6xolw6f" path="res://WalterTurncoat-Regular.ttf" id="1_4pa3g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12sd5"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.5703683, 0.2547874, 1.92523e-07, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pa3g"]
+bg_color = Color(0.8745098, 0.8, 0.30980393, 1)
+border_color = Color(0.9571189, 0.78173536, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxu3i"]
+bg_color = Color(0.8745098, 0.8, 0.30980393, 1)
+border_width_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_kxu3i"]
+font = ExtResource("1_4pa3g")
+font_size = 47
+font_color = Color(0.8745098, 0.8, 0.30980393, 1)
+outline_color = Color(0.60033995, 0.26655886, 0.03213844, 1)
+stacked_outline_count = 1
+stacked_outline_0/color = Color(0.60033995, 0.26655886, 0.03213844, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mtskb"]
+font = ExtResource("1_4pa3g")
+font_size = 47
+font_color = Color(0.8745098, 0.8, 0.30980393, 1)
+outline_color = Color(0.60033995, 0.26655886, 0.03213844, 1)
+stacked_outline_count = 1
+stacked_outline_0/color = Color(0.60033995, 0.26655886, 0.03213844, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g5xju"]
+font = ExtResource("1_4pa3g")
+font_size = 47
+font_color = Color(0.57700837, 0.5770084, 0.57700837, 1)
+stacked_outline_count = 1
+stacked_outline_0/color = Color(0.60033995, 0.26655886, 0.03213844, 1)
+
+[node name="Settings" type="CanvasLayer"]
+
+[node name="SFXVolume" type="HSlider" parent="."]
+offset_left = 340.0
+offset_top = 500.0
+offset_right = 640.0
+offset_bottom = 516.0
+scale = Vector2(2, 2)
+theme_override_styles/slider = SubResource("StyleBoxFlat_12sd5")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_4pa3g")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_kxu3i")
+value = 50.0
+
+[node name="MusicVolume" type="HSlider" parent="."]
+offset_left = 340.0
+offset_top = 319.0
+offset_right = 640.0
+offset_bottom = 335.0
+scale = Vector2(2, 2)
+theme_override_styles/slider = SubResource("StyleBoxFlat_12sd5")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_4pa3g")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_kxu3i")
+value = 50.0
+
+[node name="MusicLabel" type="Label" parent="."]
+offset_left = 490.0
+offset_top = 250.0
+offset_right = 792.0
+offset_bottom = 319.0
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_kxu3i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicLabel" type="Label" parent="MusicLabel"]
+layout_mode = 0
+offset_left = -58.0
+offset_top = -47.0
+offset_right = 244.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(0.8745098, 0.8, 0.30980393, 1)
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_mtskb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXLable" type="Label" parent="."]
+offset_left = 490.0
+offset_top = 416.0
+offset_right = 792.0
+offset_bottom = 485.0
+text = "SFX Volume"
+label_settings = SubResource("LabelSettings_g5xju")
+horizontal_alignment = 1
+vertical_alignment = 1

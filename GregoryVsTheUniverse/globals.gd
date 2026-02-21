@@ -8,6 +8,7 @@ var stage:int = -1
 var playerHealth:float = 100.0
 var musicVolume:float = 70.0
 var sfxVolume:float = 70.0
+var playerPosition: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

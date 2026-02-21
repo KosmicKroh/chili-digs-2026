@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5w54k0pcb03i"]
+
+[ext_resource type="Script" uid="uid://bk87e021tt03f" path="res://R_Safe_Folder/enemy.gd" id="1_a8fsw"]
+[ext_resource type="Texture2D" uid="uid://c08iarj6g5qdw" path="res://icon.svg" id="1_lmrcu"]
+[ext_resource type="PackedScene" uid="uid://jpw5kucj08gj" path="res://R_Safe_Folder/Behavior/Melee_Enemy_Behavior.tscn" id="3_6j10r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a8fsw"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_a8fsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a8fsw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lmrcu")
+
+[node name="MeleeEnemy" parent="." instance=ExtResource("3_6j10r")]

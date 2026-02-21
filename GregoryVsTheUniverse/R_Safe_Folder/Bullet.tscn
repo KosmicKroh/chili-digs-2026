@@ -8,6 +8,6 @@
 texture = ExtResource("1_bnr8s")
 script = ExtResource("2_0fh66")
 lifeTime = 10.0
-speed = 100
+speed = 900
 
 [node name="HitBox" parent="." instance=ExtResource("3_f3rwb")]

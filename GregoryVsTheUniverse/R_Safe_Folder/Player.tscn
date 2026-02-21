@@ -1,12 +1,43 @@
-[gd_scene load_steps=7 format=3 uid="uid://0xxlok830twu"]
+[gd_scene load_steps=11 format=3 uid="uid://0xxlok830twu"]
 
 [ext_resource type="Script" uid="uid://2wdm3hoq08hl" path="res://R_Safe_Folder/player.gd" id="1_fagkk"]
 [ext_resource type="Texture2D" uid="uid://btfe80wn7mgv8" path="res://Character-Gregory.webp" id="2_17vdu"]
 [ext_resource type="PackedScene" uid="uid://bjnmx3rio0thh" path="res://R_Safe_Folder/Behavior/Player_Behavior.tscn" id="3_0vllw"]
+[ext_resource type="Texture2D" uid="uid://r1a5k7lb8j6c" path="res://Anim-Roll.webp" id="3_lcqtm"]
 [ext_resource type="PackedScene" uid="uid://bi8ratggbl1hq" path="res://R_Safe_Folder/HurtBox.tscn" id="4_17vdu"]
 [ext_resource type="PackedScene" uid="uid://dxd8hjhhh3lf3" path="res://R_Safe_Folder/Interactions.tscn" id="5_fenry"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tymu4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbfdg"]
+atlas = ExtResource("3_lcqtm")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7bpx"]
+atlas = ExtResource("3_lcqtm")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65vki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_17vdu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbfdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7bpx")
+}],
+"loop": true,
+"name": &"rolling",
+"speed": 20.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_fagkk")
@@ -15,9 +46,10 @@ script = ExtResource("1_fagkk")
 scale = Vector2(1, 2.1200013)
 shape = SubResource("CircleShape2D_tymu4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(16, 0)
-texture = ExtResource("2_17vdu")
+sprite_frames = SubResource("SpriteFrames_65vki")
+animation = &"rolling"
 
 [node name="PlayerBehavior" parent="." instance=ExtResource("3_0vllw")]
 

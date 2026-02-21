@@ -21,6 +21,7 @@ var meleeEnemyTextures: Array = [preload("res://enemySprites/Character-worker6.w
 								preload("res://enemySprites/Character-worker9.webp"),
 								preload("res://enemySprites/Character-worker10.webp")
 								]
+var rollSprites: Array 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -29,3 +29,5 @@ func _physics_process(delta: float) -> void:
 		if dash_cooldown <= 0:
 			dash_velocity = direction * 400 * dash_strength
 			dash_cooldown = max_dash_cooldown
+			if "player" in parent:
+				parent.roll()

@@ -232,6 +232,21 @@ debug_color = Color(0.32941177, 0.6117647, 0.32941177, 0.41960785)
 
 [node name="Spawns" type="Node2D" parent="."]
 
+[node name="Spawn1" type="Marker2D" parent="Spawns"]
+position = Vector2(200, 0)
+
+[node name="Spawn2" type="Marker2D" parent="Spawns"]
+position = Vector2(659, 2)
+
+[node name="Spawn3" type="Marker2D" parent="Spawns"]
+position = Vector2(443, -240)
+
+[node name="Spawn4" type="Marker2D" parent="Spawns"]
+position = Vector2(441, 248)
+
+[node name="Spawn5" type="Marker2D" parent="Spawns"]
+position = Vector2(441, 5)
+
 [node name="Overlap" type="Area2D" parent="."]
 visible = false
 collision_layer = 128

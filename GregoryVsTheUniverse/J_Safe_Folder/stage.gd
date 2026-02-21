@@ -14,7 +14,7 @@ const enemies = [
 	preload("res://R_Safe_Folder/Enemy_Ranged.tscn")
 ]
 
-@export var roomCount:int = 30
+@export var roomCount:int = 10
 @export var enemyCount:int = 10
 var availableExits = []
 var newExitIndex:int = 0
@@ -33,6 +33,7 @@ func _ready():
 
 func generate():
 	readyToGenerate = true
+	
 
 func spawn_enemies():
 	enemySpawns.shuffle()

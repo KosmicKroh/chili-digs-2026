@@ -1,10 +1,11 @@
 extends Node2D
 
 var room_layouts = [
-	load("res://J_Safe_Folder/room_bullpin.tscn")
+	load("res://J_Safe_Folder/room_bullpin.tscn"),
+	load("res://J_Safe_Folder/room_conference.tscn")
 ]
 
-@export var roomCount:int = 10
+@export var roomCount:int = 100
 @export var enemyCount:int = 10
 var availableExits = []
 var newExitIndex:int = 0

@@ -14,3 +14,4 @@ speed = 900
 
 [node name="HitBox" parent="." instance=ExtResource("3_f3rwb")]
 scale = Vector2(0.16005903, 0.111687995)
+collision_mask = 3

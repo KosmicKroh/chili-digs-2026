@@ -1,20 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwa32cindg5rg"]
+[gd_scene load_steps=8 format=3 uid="uid://cwa32cindg5rg"]
 
 [ext_resource type="PackedScene" uid="uid://0xxlok830twu" path="res://R_Safe_Folder/Player.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://b5w54k0pcb03i" path="res://R_Safe_Folder/Enemy_Melee.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://c2xa75n84pud2" path="res://R_Safe_Folder/Enemy_Ranged.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://7c8e2tsc5t0w" path="res://main.gd" id="1_272bh"]
+[ext_resource type="Texture2D" uid="uid://iuqii03khcbm" path="res://Room-Start.png" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bxhy6r2ejuty" path="res://R_Safe_Folder/stapler_pick_up.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bjmkxkxsqewbw" path="res://J_Safe_Folder/stage.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://b88me3jvsqavr" path="res://lobby.tscn" id="7_272bh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lquwl"]
+radius = 134.3019
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_272bh")
 
-[node name="Player" parent="." instance=ExtResource("1_0xm2m")]
-position = Vector2(123, 125)
+[node name="MainCam" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
-[node name="Enemy_Melee" parent="." instance=ExtResource("2_h2yge")]
-position = Vector2(334, 104)
+[node name="StartArea" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_lquwl")
 
-[node name="EnemyRanged" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(715, 272)
+[node name="Lobby" parent="." instance=ExtResource("7_272bh")]
+position = Vector2(0, -1000)
+
+[node name="FirstElevator" type="Area2D" parent="."]
+position = Vector2(450, -2388)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstElevator"]
+position = Vector2(0, -26)
+shape = SubResource("CircleShape2D_lquwl")
 
 [node name="ExampleInteractable" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(215, 300)
+position = Vector2(124, -1910)
+
+[node name="Stages" type="Node2D" parent="."]
+
+[node name="Stage1" parent="Stages" instance=ExtResource("6_7mycd")]
+position = Vector2(0, -10000)
+roomCount = 8
+
+[node name="Player" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(635, 490)
+
+[connection signal="body_entered" from="FirstElevator" to="." method="_on_first_elevator_body_entered"]

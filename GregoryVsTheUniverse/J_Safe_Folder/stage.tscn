@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjmkxkxsqewbw"]
+[gd_scene load_steps=3 format=3 uid="uid://bjmkxkxsqewbw"]
 
 [ext_resource type="Script" uid="uid://c2q1s2q2dl1np" path="res://J_Safe_Folder/stage.gd" id="1_cdsn7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdsn7"]
+radius = 72.33948
 
 [node name="stage" type="Node2D"]
 script = ExtResource("1_cdsn7")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
+[node name="ElevatorArea" type="Area2D" parent="."]
+position = Vector2(150, -150)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorArea"]
+shape = SubResource("CircleShape2D_cdsn7")
+
+[connection signal="body_entered" from="ElevatorArea" to="." method="_on_elevator_area_body_entered"]

@@ -10,11 +10,11 @@ func _ready():
 func _process(delta):
 	if Globals.stage == -1:
 		$MainCam.position = Vector2(640,360)
-		if $Player.position.y < -50:
+		if Globals.playerPosition.y < -50:
 			$Player.position = Vector2(450,-1200)
 			Globals.stage = 0
 	else:
-		$MainCam.position = $Player.position
+		$MainCam.position = Globals.playerPosition
 
 
 func _on_first_elevator_body_entered(body):

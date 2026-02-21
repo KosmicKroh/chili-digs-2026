@@ -9,7 +9,7 @@ var room_layouts = [
 	load("res://J_Safe_Folder/room_waiting.tscn"),
 	load("res://J_Safe_Folder/room_office.tscn")
 ]
-var enemies = [
+const enemies = [
 	preload("res://R_Safe_Folder/Enemy_Melee.tscn"),
 	preload("res://R_Safe_Folder/Enemy_Ranged.tscn")
 ]

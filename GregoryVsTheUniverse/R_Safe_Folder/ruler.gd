@@ -7,7 +7,7 @@ extends Node2D
 var ruler_bullet_texture = preload("res://Item-Pen.png")
 
 func fire(Player_Bullet: bool) -> void:
-	var bullet_position = parent.position + bulletspawn.rotated(parent.rotation) * 4
+	var bullet_position = parent.position + bulletspawn.rotated(parent.rotation)
 	var bullet = Bullet.newBullet(Player_Bullet, bullet_position, parent.rotation, 1, 1, parent.speed)
 	bullet.texture = ruler_bullet_texture
 	parent.get_parent().add_child(bullet)

@@ -9,4 +9,5 @@ script = ExtResource("1_14l64")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(32, 0)
+scale = Vector2(4, 4)
 texture = ExtResource("2_14l64")

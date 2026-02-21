@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://0xxlok830twu"]
+[gd_scene load_steps=6 format=3 uid="uid://0xxlok830twu"]
 
 [ext_resource type="Script" uid="uid://2wdm3hoq08hl" path="res://R_Safe_Folder/player.gd" id="1_fagkk"]
 [ext_resource type="Texture2D" uid="uid://c08iarj6g5qdw" path="res://icon.svg" id="2_tymu4"]
 [ext_resource type="PackedScene" uid="uid://bjnmx3rio0thh" path="res://R_Safe_Folder/Behavior/Player_Behavior.tscn" id="3_0vllw"]
+[ext_resource type="PackedScene" uid="uid://bi8ratggbl1hq" path="res://R_Safe_Folder/HurtBox.tscn" id="4_17vdu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tymu4"]
 
@@ -16,3 +17,5 @@ shape = SubResource("CircleShape2D_tymu4")
 texture = ExtResource("2_tymu4")
 
 [node name="PlayerBehavior" parent="." instance=ExtResource("3_0vllw")]
+
+[node name="HurtBox" parent="." instance=ExtResource("4_17vdu")]

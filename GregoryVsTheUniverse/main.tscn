@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwa32cindg5rg"]
+[gd_scene load_steps=10 format=3 uid="uid://cwa32cindg5rg"]
 
 [ext_resource type="PackedScene" uid="uid://0xxlok830twu" path="res://R_Safe_Folder/Player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://7c8e2tsc5t0w" path="res://main.gd" id="1_272bh"]
 [ext_resource type="Texture2D" uid="uid://iuqii03khcbm" path="res://Room-Start.png" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bxhy6r2ejuty" path="res://R_Safe_Folder/stapler_pick_up.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bjmkxkxsqewbw" path="res://J_Safe_Folder/stage.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://b4s51dcewmwfv" path="res://J_Safe_Folder/hud.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://b88me3jvsqavr" path="res://lobby.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://dvt3tionrfyms" path="res://S_Safe_Folder/StartMenu.tscn" id="8_kek77"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lquwl"]
 radius = 134.3019
@@ -42,7 +44,32 @@ position = Vector2(124, -1910)
 position = Vector2(0, -10000)
 roomCount = 8
 
+[node name="Stage2" parent="Stages" instance=ExtResource("6_7mycd")]
+position = Vector2(0, -20000)
+roomCount = 12
+enemyCount = 16
+
+[node name="Stage3" parent="Stages" instance=ExtResource("6_7mycd")]
+position = Vector2(0, -30000)
+roomCount = 16
+enemyCount = 24
+
+[node name="Stage4" parent="Stages" instance=ExtResource("6_7mycd")]
+position = Vector2(0, -40000)
+roomCount = 20
+enemyCount = 40
+
+[node name="Stage5" parent="Stages" instance=ExtResource("6_7mycd")]
+position = Vector2(0, -50000)
+enemyCount = 67
+
 [node name="Player" parent="." instance=ExtResource("1_0xm2m")]
 position = Vector2(635, 490)
 
+[node name="HUD" parent="." instance=ExtResource("7_5vw27")]
+
+[node name="Settings" parent="." instance=ExtResource("8_kek77")]
+visible = false
+
 [connection signal="body_entered" from="FirstElevator" to="." method="_on_first_elevator_body_entered"]
+[connection signal="next_stage" from="Stages/Stage1" to="." method="_on_stage_1_next_stage"]

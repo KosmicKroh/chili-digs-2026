@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0ympfl72txr3"]
 
 [ext_resource type="Script" uid="uid://bg6475n3jyml2" path="res://R_Safe_Folder/gun.gd" id="1_14l64"]
-[ext_resource type="Texture2D" uid="uid://b1kuby4rc2ahh" path="res://Item-Staple.png" id="2_14l64"]
+[ext_resource type="Texture2D" uid="uid://blritdh3iha2h" path="res://Item-Stapler.png" id="2_14l64"]
 
 [node name="Gun" type="Node2D"]
 script = ExtResource("1_14l64")
@@ -9,5 +9,5 @@ script = ExtResource("1_14l64")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(32, 0)
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 texture = ExtResource("2_14l64")

@@ -6,7 +6,7 @@ extends Node2D
 @onready var onPlayer: bool = "player" in get_parent()
 @onready var bulletspawn: Vector2 = $Sprite2D.position
 @onready var parent: CharacterBody2D = get_parent()
-var gun_bullet_texture = preload("res://icon.svg")
+var gun_bullet_texture = preload("res://Item-Staple.png"a)
 
 func fire(Player_Bullet: bool) -> void:
 	var bullet_position = parent.position + bulletspawn.rotated(parent.rotation) * 2

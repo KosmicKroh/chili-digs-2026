@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjnmx3rio0thh"]
+
+[ext_resource type="Script" uid="uid://bc3g0di3wx15v" path="res://R_Safe_Folder/Behavior/Player_Behavior.gd" id="1_1oo54"]
+
+[node name="PlayerBehavior" type="Node2D"]
+script = ExtResource("1_1oo54")

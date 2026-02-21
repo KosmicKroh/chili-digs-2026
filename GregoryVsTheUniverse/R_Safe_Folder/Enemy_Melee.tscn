@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5w54k0pcb03i"]
+
+[ext_resource type="Script" uid="uid://bk87e021tt03f" path="res://R_Safe_Folder/enemy.gd" id="1_ibdxf"]
+[ext_resource type="Texture2D" uid="uid://c08iarj6g5qdw" path="res://icon.svg" id="2_oxtwm"]
+[ext_resource type="PackedScene" uid="uid://jpw5kucj08gj" path="res://R_Safe_Folder/Behavior/Melee_Enemy_Behavior.tscn" id="3_yiaf1"]
+[ext_resource type="PackedScene" uid="uid://td7jphvigg30" path="res://R_Safe_Folder/Ruler.tscn" id="4_oxtwm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a8fsw"]
+
+[node name="Enemy_Melee" type="CharacterBody2D" node_paths=PackedStringArray("weapon")]
+script = ExtResource("1_ibdxf")
+weapon = NodePath("Ruler")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a8fsw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oxtwm")
+
+[node name="Ruler" parent="." instance=ExtResource("4_oxtwm")]
+
+[node name="Melee_Enemy_Behavior" parent="." instance=ExtResource("3_yiaf1")]

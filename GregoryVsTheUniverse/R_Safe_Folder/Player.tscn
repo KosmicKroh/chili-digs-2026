@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://0xxlok830twu"]
+
+[ext_resource type="Script" uid="uid://2wdm3hoq08hl" path="res://R_Safe_Folder/player.gd" id="1_fagkk"]
+[ext_resource type="Texture2D" uid="uid://btfe80wn7mgv8" path="res://Character-Gregory.webp" id="2_17vdu"]
+[ext_resource type="PackedScene" uid="uid://bjnmx3rio0thh" path="res://R_Safe_Folder/Behavior/Player_Behavior.tscn" id="3_0vllw"]
+[ext_resource type="PackedScene" uid="uid://bi8ratggbl1hq" path="res://R_Safe_Folder/HurtBox.tscn" id="4_17vdu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tymu4"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_fagkk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 2.1200013)
+shape = SubResource("CircleShape2D_tymu4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 0)
+texture = ExtResource("2_17vdu")
+
+[node name="PlayerBehavior" parent="." instance=ExtResource("3_0vllw")]
+
+[node name="HurtBox" parent="." instance=ExtResource("4_17vdu")]
+scale = Vector2(0.1994295, 0.4394303)

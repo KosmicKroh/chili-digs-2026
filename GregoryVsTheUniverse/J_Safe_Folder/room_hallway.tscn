@@ -1,0 +1,282 @@
+[gd_scene load_steps=8 format=3 uid="uid://8d1mx6kbxnnc"]
+
+[ext_resource type="Texture2D" uid="uid://cc5g73o1cwj0p" path="res://Room-Hallway.png" id="1_5ityh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vh65q"]
+size = Vector2(50, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nli0i"]
+size = Vector2(100, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x87ru"]
+size = Vector2(199.99997, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rk4ux"]
+radius = 45.893898
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hflc"]
+size = Vector2(30, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qgbl"]
+size = Vector2(276, 774)
+
+[node name="room-bullpin" type="Node2D"]
+
+[node name="Layout" type="Node2D" parent="."]
+
+[node name="Floor" type="TextureRect" parent="Layout"]
+offset_top = -400.0
+offset_right = 300.0
+offset_bottom = 400.0
+texture = ExtResource("1_5ityh")
+
+[node name="Wall1" type="StaticBody2D" parent="Layout"]
+position = Vector2(0, -400)
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall1"]
+offset_right = 50.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall1"]
+position = Vector2(25, 15)
+shape = SubResource("RectangleShape2D_vh65q")
+
+[node name="Wall10" type="StaticBody2D" parent="Layout"]
+position = Vector2(0, 370)
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall10"]
+offset_right = 50.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall10"]
+position = Vector2(25, 15)
+shape = SubResource("RectangleShape2D_vh65q")
+
+[node name="Wall2" type="StaticBody2D" parent="Layout"]
+position = Vector2(250, -400)
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall2"]
+offset_right = 50.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall2"]
+position = Vector2(25, 15)
+shape = SubResource("RectangleShape2D_vh65q")
+
+[node name="Wall3" type="StaticBody2D" parent="Layout"]
+position = Vector2(250, 370)
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall3"]
+offset_right = 50.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall3"]
+position = Vector2(25, 15)
+shape = SubResource("RectangleShape2D_vh65q")
+
+[node name="Wall4" type="StaticBody2D" parent="Layout"]
+position = Vector2(300, 300)
+rotation = 1.5707964
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall4"]
+offset_right = 100.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall4"]
+position = Vector2(50, 15)
+shape = SubResource("RectangleShape2D_nli0i")
+
+[node name="Wall5" type="StaticBody2D" parent="Layout"]
+position = Vector2(30, 300)
+rotation = 1.5707964
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall5"]
+offset_right = 100.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall5"]
+position = Vector2(50, 15)
+shape = SubResource("RectangleShape2D_nli0i")
+
+[node name="Wall6" type="StaticBody2D" parent="Layout"]
+position = Vector2(30, -400)
+rotation = 1.5707964
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall6"]
+offset_right = 100.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall6"]
+position = Vector2(50, 15)
+shape = SubResource("RectangleShape2D_nli0i")
+
+[node name="Wall7" type="StaticBody2D" parent="Layout"]
+position = Vector2(300, -398)
+rotation = 1.5707964
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall7"]
+offset_right = 100.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall7"]
+position = Vector2(50, 15)
+shape = SubResource("RectangleShape2D_nli0i")
+
+[node name="Wall8" type="StaticBody2D" parent="Layout"]
+position = Vector2(300, -100)
+rotation = 1.5707964
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall8"]
+offset_right = 200.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall8"]
+position = Vector2(100.000046, 15)
+shape = SubResource("RectangleShape2D_x87ru")
+
+[node name="Wall9" type="StaticBody2D" parent="Layout"]
+position = Vector2(30, -100)
+rotation = 1.5707964
+
+[node name="Rect" type="ColorRect" parent="Layout/Wall9"]
+offset_right = 200.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Wall9"]
+position = Vector2(100.000046, 15)
+shape = SubResource("RectangleShape2D_x87ru")
+
+[node name="Table" type="StaticBody2D" parent="Layout"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Table"]
+position = Vector2(243.5, 5)
+shape = SubResource("CircleShape2D_rk4ux")
+
+[node name="Exits" type="Node2D" parent="."]
+
+[node name="Exit1" type="Marker2D" parent="Exits"]
+position = Vector2(300, -198)
+gizmo_extents = 50.0
+
+[node name="Doorway" type="StaticBody2D" parent="Exits/Exit1"]
+
+[node name="Rect" type="ColorRect" parent="Exits/Exit1/Doorway"]
+offset_left = -30.0
+offset_top = -100.0
+offset_bottom = 100.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Exits/Exit1/Doorway"]
+position = Vector2(-15, 0)
+shape = SubResource("RectangleShape2D_0hflc")
+debug_color = Color(0.3303137, 0.6132093, 0.32991427, 0.41960785)
+
+[node name="Exit2" type="Marker2D" parent="Exits"]
+position = Vector2(0, -200)
+rotation = 3.1415927
+gizmo_extents = 50.0
+
+[node name="Doorway" type="StaticBody2D" parent="Exits/Exit2"]
+
+[node name="Rect" type="ColorRect" parent="Exits/Exit2/Doorway"]
+offset_left = -30.0
+offset_top = -100.0
+offset_bottom = 100.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Exits/Exit2/Doorway"]
+position = Vector2(-15, 0)
+shape = SubResource("RectangleShape2D_0hflc")
+debug_color = Color(0.32941177, 0.6117647, 0.32941177, 0.41960785)
+
+[node name="Exit5" type="Marker2D" parent="Exits"]
+position = Vector2(0, 200)
+rotation = 3.1415927
+gizmo_extents = 50.0
+
+[node name="Doorway" type="StaticBody2D" parent="Exits/Exit5"]
+
+[node name="Rect" type="ColorRect" parent="Exits/Exit5/Doorway"]
+offset_left = -30.0
+offset_top = -100.0
+offset_bottom = 100.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Exits/Exit5/Doorway"]
+position = Vector2(-15, 0)
+shape = SubResource("RectangleShape2D_0hflc")
+debug_color = Color(0.32941177, 0.6117647, 0.32941177, 0.41960785)
+
+[node name="Exit3" type="Marker2D" parent="Exits"]
+position = Vector2(300, 200)
+gizmo_extents = 50.0
+
+[node name="Doorway" type="StaticBody2D" parent="Exits/Exit3"]
+
+[node name="Rect" type="ColorRect" parent="Exits/Exit3/Doorway"]
+offset_left = -30.0
+offset_top = -100.0
+offset_bottom = 100.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Exits/Exit3/Doorway"]
+position = Vector2(-15, 0)
+shape = SubResource("RectangleShape2D_0hflc")
+debug_color = Color(0.32941177, 0.6117647, 0.32941177, 0.41960785)
+
+[node name="Exit4" type="Marker2D" parent="Exits"]
+position = Vector2(150, 400)
+rotation = 1.5707964
+gizmo_extents = 50.0
+
+[node name="Doorway" type="StaticBody2D" parent="Exits/Exit4"]
+
+[node name="Rect" type="ColorRect" parent="Exits/Exit4/Doorway"]
+offset_left = -30.0
+offset_top = -100.0
+offset_bottom = 100.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Exits/Exit4/Doorway"]
+position = Vector2(-15, 0)
+shape = SubResource("RectangleShape2D_0hflc")
+debug_color = Color(0.32941177, 0.6117647, 0.32941177, 0.41960785)
+
+[node name="Exit6" type="Marker2D" parent="Exits"]
+position = Vector2(150, -400)
+rotation = -1.5707964
+gizmo_extents = 50.0
+
+[node name="Doorway" type="StaticBody2D" parent="Exits/Exit6"]
+
+[node name="Rect" type="ColorRect" parent="Exits/Exit6/Doorway"]
+offset_left = -30.0
+offset_top = -100.0
+offset_bottom = 100.0
+color = Color(0, 0, 0, 1)
+
+[node name="Collider" type="CollisionShape2D" parent="Exits/Exit6/Doorway"]
+position = Vector2(-15, 0)
+shape = SubResource("RectangleShape2D_0hflc")
+debug_color = Color(0.32941177, 0.6117647, 0.32941177, 0.41960785)
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="Overlap" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 128
+
+[node name="Collider" type="CollisionShape2D" parent="Overlap"]
+position = Vector2(152, -2)
+shape = SubResource("RectangleShape2D_6qgbl")
+debug_color = Color(0.90216744, 0.28832987, 0.30085823, 0.41960785)

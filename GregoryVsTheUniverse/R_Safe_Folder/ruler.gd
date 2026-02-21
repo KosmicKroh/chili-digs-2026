@@ -7,8 +7,7 @@ extends Node2D
 
 func fire() -> void:
 	var bullet_position = parent.position + bulletspawn.rotated(parent.rotation) * 2
-	var bullet = Bullet.newBullet(bullet_position, parent.rotation - PI/2, 1, 1, parent.speed)
-	bullet.rotation += PI/2
+	var bullet = Bullet.newBullet(bullet_position, parent.rotation, 1, 1, parent.speed)
 	parent.get_parent().add_child(bullet)
 
 func _input(event: InputEvent) -> void:

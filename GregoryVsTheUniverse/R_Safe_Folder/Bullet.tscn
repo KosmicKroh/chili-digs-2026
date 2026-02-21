@@ -11,3 +11,4 @@ lifeTime = 10.0
 speed = 900
 
 [node name="HitBox" parent="." instance=ExtResource("3_f3rwb")]
+scale = Vector2(2, 1)

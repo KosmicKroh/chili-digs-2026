@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://b3bnsy8ede8ud" path="res://R_Safe_Folder/Behavior/Melee_Enemy_Behavior.gd" id="1_f8u2m"]
 
-[node name="MeleeEnemy" type="Node2D"]
+[node name="Melee_Enemy_Behavior" type="Node2D"]
 script = ExtResource("1_f8u2m")

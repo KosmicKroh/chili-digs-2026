@@ -1,5 +1,7 @@
 extends Area2D
 
+# Talks to HitBox and handels Parent death call
+
 @export var Max_Health: int
 var Health: int
 

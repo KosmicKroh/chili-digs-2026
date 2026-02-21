@@ -2,10 +2,10 @@ class_name Bullet extends Sprite2D
 
 @export var lifeTime: float
 @export var speed: int
-@export var Damage: Area2D
+@export var Damage: int
 const BULLET_SCENE: PackedScene = preload("res://R_Safe_Folder/Bullet.tscn")
 
-static func newBullet(Position: Vector2, Rotation: float = 0, Bullet_Damage: int = 1, LifeTime: float = 10, Speed: int = 100) -> Sprite2D:
+static func newBullet(Position: Vector2, Rotation: float = 0, Bullet_Damage: int = 1, LifeTime: float = 10, Speed: int = 900) -> Sprite2D:
 	var newbullet = BULLET_SCENE.instantiate()
 	newbullet.position = Position
 	newbullet.rotation = Rotation

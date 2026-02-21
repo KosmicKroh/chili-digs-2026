@@ -6,6 +6,7 @@
 size = Vector2(100, 100)
 
 [node name="HurtBox" type="Area2D"]
+collision_layer = 2
 script = ExtResource("1_w1cu3")
 Max_Health = 5
 

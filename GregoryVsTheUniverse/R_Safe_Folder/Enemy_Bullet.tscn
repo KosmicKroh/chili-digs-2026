@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ckqf6fctmg735" path="res://R_Safe_Folder/HitBox.tscn" id="3_cg61t"]
 
 [node name="Bullet" type="Sprite2D"]
+scale = Vector2(5, 5)
 texture = ExtResource("1_w3fxa")
 script = ExtResource("2_q7xai")
 lifeTime = 10.0

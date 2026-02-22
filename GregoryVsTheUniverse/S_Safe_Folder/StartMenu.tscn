@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://wsrhq6xolw6f" path="res://WalterTurncoat-Regular.ttf" id="1_4pa3g"]
 [ext_resource type="Texture2D" uid="uid://br6tji2432q3s" path="res://GregKnob.png" id="1_kxu3i"]
-[ext_resource type="Script" uid="uid://dqeprydwegcqd" path="res://S_Safe_Folder/settings.gd" id="1_mtskb"]
+[ext_resource type="Script" path="res://S_Safe_Folder/settings.gd" id="1_mtskb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12sd5"]
 content_margin_left = 2.0
@@ -94,9 +94,9 @@ color = Color(0.1915113, 0.27417558, 0.27168334, 0.42352942)
 
 [node name="SFXVolume" type="HSlider" parent="."]
 offset_left = 340.0
-offset_top = 500.0
+offset_top = 434.0
 offset_right = 640.0
-offset_bottom = 516.0
+offset_bottom = 450.0
 scale = Vector2(2, 2)
 theme_override_icons/grabber_highlight = ExtResource("1_kxu3i")
 theme_override_styles/slider = SubResource("StyleBoxFlat_12sd5")
@@ -106,9 +106,9 @@ value = 50.0
 
 [node name="MusicVolume" type="HSlider" parent="."]
 offset_left = 340.0
-offset_top = 319.0
+offset_top = 295.0
 offset_right = 640.0
-offset_bottom = 335.0
+offset_bottom = 311.0
 scale = Vector2(2, 2)
 theme_override_icons/grabber_highlight = ExtResource("1_kxu3i")
 theme_override_styles/slider = SubResource("StyleBoxFlat_12sd5")
@@ -118,9 +118,9 @@ value = 50.0
 
 [node name="MusicLabel2" type="Label" parent="."]
 offset_left = 484.0
-offset_top = 246.0
+offset_top = 222.0
 offset_right = 786.0
-offset_bottom = 315.0
+offset_bottom = 291.0
 theme_override_colors/font_color = Color(0.5686275, 0.25490198, 0, 1)
 text = "Music Volume"
 label_settings = SubResource("LabelSettings_4pa3g")
@@ -129,9 +129,9 @@ vertical_alignment = 1
 
 [node name="MusicLabel" type="Label" parent="."]
 offset_left = 486.0
-offset_top = 249.0
+offset_top = 225.0
 offset_right = 788.0
-offset_bottom = 318.0
+offset_bottom = 294.0
 text = "Music Volume"
 label_settings = SubResource("LabelSettings_kxu3i")
 horizontal_alignment = 1
@@ -139,9 +139,9 @@ vertical_alignment = 1
 
 [node name="SFXLable2" type="Label" parent="."]
 offset_left = 488.0
-offset_top = 414.0
+offset_top = 346.0
 offset_right = 790.0
-offset_bottom = 483.0
+offset_bottom = 415.0
 text = "SFX Volume"
 label_settings = SubResource("LabelSettings_mtskb")
 horizontal_alignment = 1
@@ -149,19 +149,39 @@ vertical_alignment = 1
 
 [node name="SFXLable" type="Label" parent="."]
 offset_left = 490.0
-offset_top = 416.0
+offset_top = 348.0
 offset_right = 792.0
-offset_bottom = 485.0
+offset_bottom = 417.0
 text = "SFX Volume"
+label_settings = SubResource("LabelSettings_g5xju")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXLable3" type="Label" parent="."]
+offset_left = 488.0
+offset_top = 468.0
+offset_right = 796.0
+offset_bottom = 537.0
+text = "Screen Shake"
+label_settings = SubResource("LabelSettings_mtskb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXLable4" type="Label" parent="."]
+offset_left = 490.0
+offset_top = 470.0
+offset_right = 798.0
+offset_bottom = 539.0
+text = "Screen Shake"
 label_settings = SubResource("LabelSettings_g5xju")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Settings" type="Label" parent="."]
 offset_left = 472.0
-offset_top = 144.0
+offset_top = 130.0
 offset_right = 820.0
-offset_bottom = 241.0
+offset_bottom = 227.0
 text = "SETTINGS"
 label_settings = SubResource("LabelSettings_ybv6i")
 horizontal_alignment = 1
@@ -169,13 +189,25 @@ vertical_alignment = 1
 
 [node name="Settings2" type="Label" parent="."]
 offset_left = 477.0
-offset_top = 145.0
+offset_top = 131.0
 offset_right = 825.0
-offset_bottom = 242.0
+offset_bottom = 228.0
 text = "SETTINGS"
 label_settings = SubResource("LabelSettings_66j18")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ScreenShake" type="HSlider" parent="."]
+offset_left = 340.0
+offset_top = 558.0
+offset_right = 640.0
+offset_bottom = 574.0
+scale = Vector2(2, 2)
+theme_override_icons/grabber_highlight = ExtResource("1_kxu3i")
+theme_override_styles/slider = SubResource("StyleBoxFlat_12sd5")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_4pa3g")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mtskb")
+value = 50.0
 
 [connection signal="value_changed" from="SFXVolume" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="value_changed" from="MusicVolume" to="." method="_on_music_volume_value_changed"]

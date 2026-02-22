@@ -11,6 +11,7 @@ var sfxVolume:float = 70.0
 var screenShake:float = 70.0
 var playerPosition: Vector2
 var shakeEffect:float = 0.0
+var hardMode:bool = false
 var rangedEnemyTextures: Array = [preload("res://enemySprites/Character-worker1.webp"),
 								preload("res://enemySprites/Character-worker2.webp"),
 								preload("res://enemySprites/Character-worker3.webp"),

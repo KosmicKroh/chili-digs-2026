@@ -37,10 +37,19 @@ func generate():
 
 func spawn_enemies():
 	enemySpawns.shuffle()
-	for e in min(len(enemySpawns),enemyCount):
-		var newEnemy = enemies.pick_random().instantiate()
-		add_child(newEnemy)
-		newEnemy.global_transform = enemySpawns[e].global_transform
+	if Globals.hardMode:
+		print("HARD")
+		enemyCount = len(enemySpawns)
+		print(len(enemySpawns))
+		for e in len(enemySpawns):
+			var newEnemy = enemies.pick_random().instantiate()
+			add_child(newEnemy)
+			newEnemy.global_transform = enemySpawns[e].global_transform
+	else:
+		for e in min(len(enemySpawns),enemyCount):
+			var newEnemy = enemies.pick_random().instantiate()
+			add_child(newEnemy)
+			newEnemy.global_transform = enemySpawns[e].global_transform
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):

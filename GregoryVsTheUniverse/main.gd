@@ -3,7 +3,6 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Stages/Stage1.generate()
 	$Particles.visible = false
 
 
@@ -89,3 +88,15 @@ func _on_settings_zone_body_exited(_body):
 func _on_settings_zone_body_entered(_body):
 	$Settings/MusicVolume.value = Globals.musicVolume
 	$Settings/SFXVolume.value = Globals.sfxVolume
+
+func _on_normal_stapler_tree_exited():
+	if find_child("HardStapler") != null:
+		$HardStapler.position = Vector2(0,100000)
+		if !$Stages/Stage1.readyToGenerate:
+			$Stages/Stage1.generate()
+
+func _on_hard_stapler_tree_exited():
+	if find_child("NormalStapler") != null:
+		$NormalStapler.position = Vector2(0,100000)
+		if !$Stages/Stage1.readyToGenerate:
+			$Stages/Stage1.generate()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b88me3jvsqavr"]
+[gd_scene load_steps=9 format=3 uid="uid://b88me3jvsqavr"]
 
 [ext_resource type="Texture2D" uid="uid://dfmaslgblrbny" path="res://Room-Lobby.png" id="1_xrgmn"]
 [ext_resource type="FontFile" uid="uid://wsrhq6xolw6f" path="res://WalterTurncoat-Regular.ttf" id="2_2wvic"]
@@ -8,6 +8,11 @@
 font = ExtResource("2_2wvic")
 font_size = 32
 font_color = Color(0.9137255, 0.88235295, 0.5921569, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2wvic"]
+font = ExtResource("2_2wvic")
+font_size = 32
+font_color = Color(0.9137255, 0.33333334, 0.2901961, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xrgmn"]
 radius = 164.14932
@@ -59,6 +64,16 @@ label_settings = SubResource("LabelSettings_tftiq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label4" type="Label" parent="."]
+offset_left = 614.0
+offset_top = -773.0
+offset_right = 932.0
+offset_bottom = -680.0
+text = "HARD MODE"
+label_settings = SubResource("LabelSettings_2wvic")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Desk" type="StaticBody2D" parent="."]
 position = Vector2(243, -573)
 
@@ -88,7 +103,7 @@ shape = SubResource("RectangleShape2D_2wvic")
 [node name="StaticBody2D6" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
-position = Vector2(5.5, -910)
+position = Vector2(7, -910)
 shape = SubResource("RectangleShape2D_tftiq")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]

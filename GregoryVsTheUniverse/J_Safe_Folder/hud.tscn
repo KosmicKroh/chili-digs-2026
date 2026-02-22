@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b4s51dcewmwfv"]
+[gd_scene load_steps=26 format=3 uid="uid://b4s51dcewmwfv"]
 
 [ext_resource type="FontFile" uid="uid://wsrhq6xolw6f" path="res://WalterTurncoat-Regular.ttf" id="1_frta0"]
 [ext_resource type="Script" uid="uid://c4sohvixk833b" path="res://J_Safe_Folder/hud.gd" id="1_fvc4k"]
@@ -26,6 +26,81 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my5hw"]
+bg_color = Color(0.1747008, 0.23593879, 0.5359557, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.24313726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wj17m"]
+bg_color = Color(0.38307214, 0.59443617, 0.96049005, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_pn81n"]
+font = ExtResource("1_frta0")
+font_size = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pn81n"]
+bg_color = Color(0.38307214, 0.59443617, 0.96049005, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4t8b"]
+bg_color = Color(0.1747008, 0.23593879, 0.5359557, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.24313726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnpib"]
+bg_color = Color(0.1747008, 0.23593879, 0.5359557, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.24313726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05guq"]
+bg_color = Color(0.98305756, 0.35711467, 0.35474336, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0lk4"]
+bg_color = Color(0.44329184, 0.09928586, 0.17995825, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.24313726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpaab"]
+bg_color = Color(0.44329184, 0.09928586, 0.17995825, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.24313726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ybja"]
 bg_color = Color(0.32244626, 0.17516217, 2.4065375e-08, 1)
@@ -82,23 +157,6 @@ shadow_offset = Vector2(0, 3)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1hgap"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my5hw"]
-bg_color = Color(0.1747008, 0.23593879, 0.5359557, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_color = Color(0, 0, 0, 0.24313726)
-shadow_size = 5
-shadow_offset = Vector2(0, 3)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wj17m"]
-bg_color = Color(0.38307214, 0.59443617, 0.96049005, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_fvc4k")
 
@@ -114,6 +172,61 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_c2bgv")
 step = 1.0
 value = 80.0
 show_percentage = false
+
+[node name="StaminaBar" type="ProgressBar" parent="."]
+offset_left = 25.0
+offset_top = 658.0
+offset_right = 257.0
+offset_bottom = 698.0
+theme_override_fonts/font = ExtResource("1_frta0")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/background = SubResource("StyleBoxFlat_my5hw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wj17m")
+max_value = 0.5
+step = 0.0
+value = 0.5
+show_percentage = false
+
+[node name="EndMenu" type="CanvasGroup" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="EndMenu"]
+offset_right = 1289.0
+offset_bottom = 732.0
+color = Color(0.03137255, 0.08235294, 0.1254902, 0.62352943)
+
+[node name="Label" type="Label" parent="EndMenu"]
+offset_left = 295.0
+offset_top = 304.0
+offset_right = 992.0
+offset_bottom = 441.0
+text = "Gregory took on The Universe.
+And Gregory Won."
+label_settings = SubResource("LabelSettings_pn81n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="Button" parent="EndMenu"]
+offset_left = 490.0
+offset_top = 500.0
+offset_right = 790.0
+offset_bottom = 560.0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_pn81n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w4t8b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qnpib")
+text = " Restart "
+
+[node name="Quit" type="Button" parent="EndMenu"]
+offset_left = 490.0
+offset_top = 600.0
+offset_right = 790.0
+offset_bottom = 660.0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_05guq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d0lk4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpaab")
+text = "  Quit  "
 
 [node name="EnemyCounterBar" type="ProgressBar" parent="."]
 offset_left = 520.0
@@ -150,20 +263,9 @@ step = 1.0
 value = 80.0
 show_percentage = false
 
-[node name="StaminaBar" type="ProgressBar" parent="."]
-offset_left = 25.0
-offset_top = 658.0
-offset_right = 257.0
-offset_bottom = 698.0
-theme_override_fonts/font = ExtResource("1_frta0")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/background = SubResource("StyleBoxFlat_my5hw")
-theme_override_styles/fill = SubResource("StyleBoxFlat_wj17m")
-max_value = 0.5
-step = 0.0
-value = 0.5
-show_percentage = false
-
 [node name="PromoteSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_0ybja")
 bus = &"SFX"
+
+[connection signal="pressed" from="EndMenu/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="EndMenu/Quit" to="." method="_on_quit_pressed"]

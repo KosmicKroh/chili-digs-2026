@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dt5wsaguiwumm"]
+[gd_scene load_steps=5 format=3 uid="uid://dt5wsaguiwumm"]
 
 [ext_resource type="Script" uid="uid://kkbticwn831" path="res://R_Safe_Folder/Water_Cooler.gd" id="1_5ohxl"]
 [ext_resource type="Texture2D" uid="uid://cij17v7ghxhs" path="res://Item-WaterCooler.webp" id="2_5ohxl"]
+[ext_resource type="AudioStream" uid="uid://dx3tql2a8v61n" path="res://Audio/WaterHeal.mp3" id="3_nulk5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wknd"]
 
@@ -18,3 +19,8 @@ shape = SubResource("RectangleShape2D_8wknd")
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("2_5ohxl")
+
+[node name="HealSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nulk5")
+volume_db = 8.0
+bus = &"SFX"

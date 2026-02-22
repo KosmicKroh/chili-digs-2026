@@ -25,20 +25,56 @@ func _process(_delta):
 			promote()
 	else:
 		promoted = false
-	if $PromoteSound.is_playing():
-		var playPos = $PromoteSound.get_playback_position()
-		$BarCover.visible = true
-		if playPos < 0.92:
-			$BarCover.modulate = Color(1.0,1.0,1.0,playPos*2.0)
-			$EnemyCounterBar.scale = Vector2.ONE*(1.5+sqrt(playPos))
-			$EnemyCounterBar.position = Vector2(520,40)+Vector2.from_angle(randf()*180)*playPos*8.0
+	if Globals.stage < 5 or Globals.killCount < Globals.enemyGoal:
+		$EndMenu.visible = false
+		if $PromoteSound.is_playing():
+			var playPos = $PromoteSound.get_playback_position()
+			$BarCover.visible = true
+			if playPos < 0.92:
+				$BarCover.modulate = Color(1.0,1.0,1.0,playPos*2.0)
+				$EnemyCounterBar.scale = Vector2.ONE*(1.5+sqrt(playPos))
+				$EnemyCounterBar.position = Vector2(520,40)+Vector2.from_angle(randf()*180)*playPos*8.0
+			else:
+				$BarCover.modulate = Color(1.0,1.0,1.0,2.0-playPos)
+				$EnemyCounterBar.scale += Vector2.ONE*((max(0,2.0-playPos)+1.5-$EnemyCounterBar.scale.x)/20.0)
+				$EnemyCounterBar.position = Vector2(520,40)+Vector2.from_angle(randf()*180)*max(0,2.0-playPos)*3.0
 		else:
-			$BarCover.modulate = Color(1.0,1.0,1.0,2.0-playPos)
-			$EnemyCounterBar.scale += Vector2.ONE*((max(0,2.0-playPos)+1.5-$EnemyCounterBar.scale.x)/20.0)
-			$EnemyCounterBar.position = Vector2(520,40)+Vector2.from_angle(randf()*180)*max(0,2.0-playPos)*3.0
+			$EnemyCounterBar.scale = Vector2(1.5,1.5)
+			$EnemyCounterBar.position = Vector2(520,40)
+			$BarCover.visible = false
 	else:
-		$EnemyCounterBar.scale = Vector2(1.5,1.5)
-		$EnemyCounterBar.position = Vector2(520,40)
-		$BarCover.visible = false
+		if $PromoteSound.is_playing():
+			var playPos = $PromoteSound.get_playback_position()
+			$BarCover.visible = true
+			$EndMenu.modulate = Color(1.0,1.0,1.0,clamp(playPos-0.92,0,1.0))
+			$EndMenu.visible = true
+			if playPos < 0.92:
+				$BarCover.modulate = Color(1.0,1.0,1.0,playPos*2.0)
+				$EnemyCounterBar.scale = Vector2.ONE*(1.5+playPos)
+				$EnemyCounterBar.position = Vector2(520,40)+Vector2.from_angle(randf()*180)*playPos*8.0
+			else:
+				$BarCover.modulate = Color(1.0,1.0,1.0,2.0-playPos)
+				$EnemyCounterBar.scale += Vector2.ONE*((max(0,2.0-playPos)+4.0-$EnemyCounterBar.scale.x)/20.0)
+				$EnemyCounterBar.position = Vector2(520,40)+Vector2.from_angle(randf()*180)*max(0,2.0-playPos)*3.0
+		else:
+			$EnemyCounterBar.scale = Vector2(4.0,4.0)
+			$EnemyCounterBar.position = Vector2(520,40)
+			$BarCover.visible = false
 	$BarCover.position = $EnemyCounterBar.position
 	$BarCover.scale = $EnemyCounterBar.scale
+
+
+func _on_restart_pressed():
+	Globals.enemyGoal = 10
+	Globals.killCount = 0
+	Globals.bulletDamage = 1.0
+	Globals.rollCooldown = 0.0
+	Globals.stage = -1
+	Globals.playerHealth = 100.0
+	Globals.playerPosition = Vector2(0,0)
+	Globals.shakeEffect = 0.0
+	get_tree().change_scene_to_file("main.tscn")
+
+
+func _on_quit_pressed():
+	get_tree().quit()

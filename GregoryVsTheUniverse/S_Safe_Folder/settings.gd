@@ -19,3 +19,7 @@ func _on_sfx_volume_value_changed(value):
 func _on_music_volume_value_changed(value):
 	Globals.musicVolume = value
 	AudioServer.set_bus_volume_linear(1,Globals.musicVolume/100.0)
+
+
+func _on_screen_shake_value_changed(value):
+	Globals.screenShake = value

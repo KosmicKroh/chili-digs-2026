@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bts6tls0jugqb"]
+[gd_scene load_steps=11 format=3 uid="uid://bts6tls0jugqb"]
 
+[ext_resource type="Script" uid="uid://d3x778ql6cpmn" path="res://J_Safe_Folder/room_office.gd" id="1_ne1de"]
 [ext_resource type="Texture2D" uid="uid://dvlnxj51jxxm2" path="res://Room-Office.png" id="1_y88hw"]
+[ext_resource type="PackedScene" uid="uid://dt5wsaguiwumm" path="res://R_Safe_Folder/Water_Cooler.tscn" id="2_q855j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5ba3"]
 size = Vector2(30, 300)
@@ -24,6 +26,7 @@ size = Vector2(30, 200)
 size = Vector2(277, 282)
 
 [node name="room-office" type="Node2D"]
+script = ExtResource("1_ne1de")
 
 [node name="Layout" type="Node2D" parent="."]
 
@@ -187,3 +190,7 @@ collision_mask = 128
 position = Vector2(257.5, -186)
 shape = SubResource("RectangleShape2D_6aqfe")
 debug_color = Color(0.90216744, 0.28832987, 0.30085823, 0.41960785)
+
+[node name="Water_Cooler" parent="." instance=ExtResource("2_q855j")]
+position = Vector2(55, -60)
+scale = Vector2(0.5, 0.5)

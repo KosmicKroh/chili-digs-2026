@@ -9,6 +9,10 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	move_and_slide()
+	if Globals.stage == 5:
+		$Halo.visible = true
+	else:
+		$Halo.visible = false
 
 func attack():
 	weapon.fire(false)

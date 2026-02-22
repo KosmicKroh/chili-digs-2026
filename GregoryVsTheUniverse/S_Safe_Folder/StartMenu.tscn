@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://wsrhq6xolw6f" path="res://WalterTurncoat-Regular.ttf" id="1_4pa3g"]
 [ext_resource type="Texture2D" uid="uid://br6tji2432q3s" path="res://GregKnob.png" id="1_kxu3i"]
-[ext_resource type="Script" path="res://S_Safe_Folder/settings.gd" id="1_mtskb"]
+[ext_resource type="Script" uid="uid://dqeprydwegcqd" path="res://S_Safe_Folder/settings.gd" id="1_mtskb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12sd5"]
 content_margin_left = 2.0
@@ -211,3 +211,4 @@ value = 50.0
 
 [connection signal="value_changed" from="SFXVolume" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="value_changed" from="MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="ScreenShake" to="." method="_on_screen_shake_value_changed"]

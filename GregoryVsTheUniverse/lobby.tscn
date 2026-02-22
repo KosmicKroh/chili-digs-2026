@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b88me3jvsqavr"]
+[gd_scene load_steps=8 format=3 uid="uid://b88me3jvsqavr"]
 
 [ext_resource type="Texture2D" uid="uid://dfmaslgblrbny" path="res://Room-Lobby.png" id="1_xrgmn"]
 [ext_resource type="FontFile" uid="uid://wsrhq6xolw6f" path="res://WalterTurncoat-Regular.ttf" id="2_2wvic"]
@@ -14,6 +14,9 @@ radius = 164.14932
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wvic"]
 size = Vector2(73, 1411)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tftiq"]
+size = Vector2(157, 318)
 
 [node name="Lobby" type="Node2D"]
 
@@ -45,6 +48,17 @@ label_settings = SubResource("LabelSettings_tftiq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label3" type="Label" parent="."]
+offset_left = 284.0
+offset_top = -1288.0
+offset_right = 602.0
+offset_bottom = -1195.0
+text = "Click (LMB) to Shoot
+Go get em, Gregory!"
+label_settings = SubResource("LabelSettings_tftiq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Desk" type="StaticBody2D" parent="."]
 position = Vector2(243, -573)
 
@@ -70,6 +84,12 @@ texture = ExtResource("3_2wvic")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-36.5, -695.5)
 shape = SubResource("RectangleShape2D_2wvic")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(5.5, -910)
+shape = SubResource("RectangleShape2D_tftiq")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(973, -9)

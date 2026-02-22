@@ -13,6 +13,8 @@ func fire(Player_Bullet: bool) -> void:
 	var new_bullet = Bullet.newBullet(Player_Bullet, bullet_position, parent.rotation)
 	new_bullet.texture = gun_bullet_texture
 	parent.get_parent().add_child(new_bullet)
+	$StapleSound.pitch_scale = randf_range(0.8,1.2)
+	$StapleSound.play()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("left_click"):

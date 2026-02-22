@@ -30,6 +30,7 @@ func _on_first_elevator_body_entered(body):
 		Globals.killCount = 0
 		$Player.position = $Stages/Stage1.position + Vector2(150,0)
 		Globals.stage = 1
+		$ElevatorSound.play()
 		$Stages/Stage2.generate()
 
 
@@ -38,4 +39,5 @@ func _on_stage_1_next_stage():
 	Globals.killCount = 0
 	$Player.position = $Stages/Stage2.position + Vector2(150,0)
 	Globals.stage = 2
+	$ElevatorSound.play()
 	$Stages/Stage3.generate()

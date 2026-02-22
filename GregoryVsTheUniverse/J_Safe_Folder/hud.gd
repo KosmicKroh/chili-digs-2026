@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+var promoted = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,3 +13,9 @@ func _process(delta):
 	$StaminaBar.value = clamp(Globals.rollCooldown,0,2.0)
 	$EnemyCounterBar.max_value = Globals.enemyGoal
 	$EnemyCounterBar.value = clamp(Globals.killCount,0,Globals.enemyGoal)
+	if Globals.killCount >= Globals.enemyGoal:
+		if not promoted:
+			promoted = true
+			$PromoteSound.play()
+	else:
+		promoted = false

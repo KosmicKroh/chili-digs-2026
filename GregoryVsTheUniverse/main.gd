@@ -4,6 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Stages/Stage1.generate()
+	$Particles.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,13 +21,15 @@ func _process(_delta):
 		elif Globals.playerPosition.y > 750:
 			get_tree().quit()
 	else:
+		if Input.is_action_just_pressed("ui_cancel"):
+			$Settings.visible = !$Settings.visible
 		if Globals.stage == 0:
 			AudioServer.get_bus_effect(1,0).cutoff_hz = 2500
 		else:
 			AudioServer.get_bus_effect(1,0).cutoff_hz = 20000
 		var camOffset = get_viewport().get_mouse_position() - Vector2(640,360)
-		$MainCam.position = Globals.playerPosition + camOffset/4.0 + Vector2.from_angle(randf_range(0,10))*Globals.shakeEffect*30.0
-		$MainCam.zoom = Vector2.ONE + Vector2(0.1,0.1)*Globals.shakeEffect
+		$MainCam.position = Globals.playerPosition + camOffset/4.0 + Vector2.from_angle(randf_range(0,10))*Globals.shakeEffect*30.0*Globals.screenShake/70.0
+		$MainCam.zoom = Vector2.ONE + Vector2(0.1,0.1)*Globals.shakeEffect*Globals.screenShake/70.0
 
 
 func _on_first_elevator_body_entered(body):
@@ -53,7 +56,7 @@ func _on_stage_2_next_stage():
 	Globals.enemyGoal = $Stages/Stage3.enemyCount
 	Globals.killCount = 0
 	$Player.position = $Stages/Stage3.position + Vector2(150,0)
-	Globals.stage = 2
+	Globals.stage = 3
 	$ElevatorSound.play()
 	$Stages/Stage4.generate()
 	$Stages/Stage1.queue_free()
@@ -63,7 +66,7 @@ func _on_stage_3_next_stage():
 	Globals.enemyGoal = $Stages/Stage4.enemyCount
 	Globals.killCount = 0
 	$Player.position = $Stages/Stage4.position + Vector2(150,0)
-	Globals.stage = 2
+	Globals.stage = 4
 	$ElevatorSound.play()
 	$Stages/Stage5.generate()
 	$Stages/Stage2.queue_free()
@@ -73,8 +76,9 @@ func _on_stage_4_next_stage():
 	Globals.enemyGoal = $Stages/Stage5.enemyCount
 	Globals.killCount = 0
 	$Player.position = $Stages/Stage5.position + Vector2(150,0)
-	Globals.stage = 2
+	Globals.stage = 5
 	$ElevatorSound.play()
+	$Particles.visible = true
 	$Stages/Stage3.queue_free()
 
 

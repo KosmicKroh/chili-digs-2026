@@ -8,7 +8,7 @@ var pen_bullet_texture = preload("res://Item-Pen.png")
 
 func fire(Player_Bullet: bool) -> void:
 	var bullet_position = parent.position + bulletspawn.rotated(parent.rotation)
-	var bullet = Bullet.newBullet(Player_Bullet, bullet_position, parent.rotation)
+	var bullet = Bullet.newBullet(Player_Bullet, bullet_position, parent.rotation, randi() % 3 + 1)
 	bullet.texture = pen_bullet_texture
 	parent.get_parent().add_child(bullet)
 

@@ -4,6 +4,14 @@ extends Area2D
 # This goes on a Area2D
 # The Interactions scene goes on what you want to detect this
 
+var used = false
+
+func _ready():
+	modulate = Color(1.0,1.0,1.0,1.0)
+
 func execute_event(caller):
-	caller.get_child("HurtBox").heal(10)
-	queue_free()
+	if not used:
+		caller.find_child("HurtBox").heal(20)
+		modulate = Color(0.4,0.4,0.4,1.0)
+		$HealSound.play()
+		used = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cwa32cindg5rg"]
+[gd_scene load_steps=25 format=3 uid="uid://cwa32cindg5rg"]
 
 [ext_resource type="PackedScene" uid="uid://0xxlok830twu" path="res://R_Safe_Folder/Player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://7c8e2tsc5t0w" path="res://main.gd" id="1_272bh"]
@@ -12,7 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://b88me3jvsqavr" path="res://lobby.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://dvt3tionrfyms" path="res://S_Safe_Folder/StartMenu.tscn" id="8_kek77"]
 [ext_resource type="AudioStream" uid="uid://bq3oy0sdpjy0w" path="res://Audio/Gregory vs The Universe.mp3" id="9_kek77"]
+[ext_resource type="Texture2D" uid="uid://bpx5ooi8tkjhj" path="res://StarParticles/UI-Star1.png" id="9_w48qg"]
 [ext_resource type="AudioStream" uid="uid://bot0lqdvgg6dt" path="res://Audio/Elevator.mp3" id="10_4c57u"]
+[ext_resource type="Texture2D" uid="uid://ddul1pfyb0aml" path="res://StarParticles/UI-Star2.png" id="10_yaehf"]
+[ext_resource type="Texture2D" uid="uid://jk5f7w0ch06a" path="res://StarParticles/UI-Star3.png" id="11_074og"]
+[ext_resource type="Texture2D" uid="uid://dn8mh6l4kw8ix" path="res://StarParticles/UI-Star4.png" id="12_cegan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dg77c"]
 size = Vector2(1280, 86)
@@ -22,6 +26,26 @@ size = Vector2(499, 899)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lquwl"]
 radius = 134.3019
+
+[sub_resource type="Curve" id="Curve_82xsv"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.23012553, 1), 0.0, 0.0, 0, 0, Vector2(0.5481171, 1), 0.0, 0.0, 0, 0, Vector2(0.81589955, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_getpj"]
+curve = SubResource("Curve_82xsv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ryguw"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 10000, 1)
+spread = 20.0
+flatness = 1.0
+initial_velocity_min = 500.0
+initial_velocity_max = 1000.0
+angular_velocity_min = -20.000015
+angular_velocity_max = 19.999983
+scale_min = 0.25
+alpha_curve = SubResource("CurveTexture_getpj")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4c57u"]
 radius = 46.043457
@@ -105,6 +129,45 @@ shape = SubResource("CircleShape2D_lquwl")
 [node name="ExampleInteractable" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(147, -1784)
 
+[node name="Particles" type="Node2D" parent="."]
+visible = false
+
+[node name="StarParticles" type="GPUParticles2D" parent="Particles"]
+position = Vector2(-10000, -80000)
+amount = 200
+texture = ExtResource("9_w48qg")
+lifetime = 30.0
+preprocess = 30.0
+visibility_rect = Rect2(-20000, -20000, 40000, 40000)
+process_material = SubResource("ParticleProcessMaterial_ryguw")
+
+[node name="StarParticles2" type="GPUParticles2D" parent="Particles"]
+position = Vector2(-10000, -80000)
+amount = 200
+texture = ExtResource("10_yaehf")
+lifetime = 30.0
+preprocess = 30.0
+visibility_rect = Rect2(-20000, -20000, 40000, 40000)
+process_material = SubResource("ParticleProcessMaterial_ryguw")
+
+[node name="StarParticles3" type="GPUParticles2D" parent="Particles"]
+position = Vector2(-10000, -80000)
+amount = 200
+texture = ExtResource("11_074og")
+lifetime = 30.0
+preprocess = 30.0
+visibility_rect = Rect2(-20000, -20000, 40000, 40000)
+process_material = SubResource("ParticleProcessMaterial_ryguw")
+
+[node name="StarParticles4" type="GPUParticles2D" parent="Particles"]
+position = Vector2(-10000, -80000)
+amount = 200
+texture = ExtResource("12_cegan")
+lifetime = 30.0
+preprocess = 30.0
+visibility_rect = Rect2(-20000, -20000, 40000, 40000)
+process_material = SubResource("ParticleProcessMaterial_ryguw")
+
 [node name="Stages" type="Node2D" parent="."]
 
 [node name="Stage1" parent="Stages" instance=ExtResource("6_7mycd")]
@@ -127,7 +190,7 @@ roomCount = 20
 enemyCount = 30
 
 [node name="Stage5" parent="Stages" instance=ExtResource("6_7mycd")]
-position = Vector2(0, -50000)
+position = Vector2(0, -80000)
 roomCount = 25
 enemyCount = 50
 

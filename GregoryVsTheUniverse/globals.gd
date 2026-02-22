@@ -8,6 +8,7 @@ var stage:int = -1
 var playerHealth:float = 100.0
 var musicVolume:float = 70.0
 var sfxVolume:float = 70.0
+var screenShake:float = 70.0
 var playerPosition: Vector2
 var shakeEffect:float = 0.0
 var rangedEnemyTextures: Array = [preload("res://enemySprites/Character-worker1.webp"),
@@ -30,11 +31,13 @@ func load_data():
 		return
 	musicVolume = config.get_value("Settings","Music-Volume",70.0)
 	sfxVolume = config.get_value("Settings","SFX-Volume",70.0)
+	screenShake = config.get_value("Settings","Screen-Shake",70.0)
 
 func save_data():
 	var config = ConfigFile.new()
 	config.set_value("Settings","Music-Volume",musicVolume)
 	config.set_value("Settings","SFX-Volume",sfxVolume)
+	config.set_value("Settings","Screen-Shake",screenShake)
 	config.save("user://gvtu-config.cfg")
 
 # Called when the node enters the scene tree for the first time.

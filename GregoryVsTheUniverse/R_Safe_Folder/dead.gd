@@ -7,8 +7,6 @@ func _ready() -> void:
 	Globals.rollCooldown = 0.0
 	Globals.stage = -1
 	Globals.playerHealth = 100.0
-	Globals.musicVolume = 70.0
-	Globals.sfxVolume = 70.0
 	Globals.playerPosition = Vector2(0,0)
 	Globals.shakeEffect = 0.0
 	AudioServer.get_bus_effect(1,0).cutoff_hz = 20000

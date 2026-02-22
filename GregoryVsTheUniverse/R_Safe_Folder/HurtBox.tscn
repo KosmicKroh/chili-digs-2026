@@ -4,8 +4,8 @@
 [ext_resource type="AudioStream" uid="uid://bfsivj1lq4p6x" path="res://Audio/Explosion.mp3" id="2_ceapm"]
 [ext_resource type="AudioStream" uid="uid://df6ytiixobwj0" path="res://Audio/HitSound.mp3" id="3_wo3oc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ceapm"]
-size = Vector2(100, 100)
+[sub_resource type="CircleShape2D" id="CircleShape2D_wo3oc"]
+radius = 46.270943
 
 [node name="HurtBox" type="Area2D"]
 collision_layer = 2
@@ -13,7 +13,7 @@ script = ExtResource("1_w1cu3")
 Max_Health = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ceapm")
+shape = SubResource("CircleShape2D_wo3oc")
 
 [node name="Explosion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ceapm")

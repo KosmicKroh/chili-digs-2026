@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://b88me3jvsqavr"]
+
+[ext_resource type="Texture2D" uid="uid://dfmaslgblrbny" path="res://Room-Lobby.png" id="1_xrgmn"]
+[ext_resource type="FontFile" uid="uid://wsrhq6xolw6f" path="res://WalterTurncoat-Regular.ttf" id="2_2wvic"]
+[ext_resource type="Texture2D" uid="uid://b1l02m6yfx3wa" path="res://Room-LobbyOverlays.png" id="3_2wvic"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tftiq"]
+font = ExtResource("2_2wvic")
+font_size = 32
+font_color = Color(0.9137255, 0.88235295, 0.5921569, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrgmn"]
+radius = 164.14932
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wvic"]
+size = Vector2(73, 1411)
+
+[node name="Lobby" type="Node2D"]
+
+[node name="Floor" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+rotation = -1.5707964
+texture = ExtResource("1_xrgmn")
+
+[node name="Label1" type="Label" parent="."]
+offset_left = 48.0
+offset_top = -540.0
+offset_right = 209.0
+offset_bottom = -447.0
+text = "Grab Your
+Stapler"
+label_settings = SubResource("LabelSettings_tftiq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 685.0
+offset_top = -533.0
+offset_right = 872.0
+offset_bottom = -440.0
+text = "Space/Shift 
+to roll"
+label_settings = SubResource("LabelSettings_tftiq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desk" type="StaticBody2D" parent="."]
+position = Vector2(243, -573)
+
+[node name="Collider" type="CollisionPolygon2D" parent="Desk"]
+position = Vector2(-2, 0)
+polygon = PackedVector2Array(57, 81, 130, 136, 189, 148, 243, 148, 308, 128, 345, 103, 416, 17, 409, 4, 353, -19, 258, 41, 143, 49, 62, -19, 1, 2)
+
+[node name="Tree" type="StaticBody2D" parent="."]
+position = Vector2(452, -964)
+
+[node name="Collider" type="CollisionShape2D" parent="Tree"]
+shape = SubResource("CircleShape2D_xrgmn")
+
+[node name="Floor2" type="TextureRect" parent="."]
+z_index = 100
+offset_right = 1400.0
+offset_bottom = 900.0
+rotation = -1.5707964
+texture = ExtResource("3_2wvic")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-36.5, -695.5)
+shape = SubResource("RectangleShape2D_2wvic")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(973, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-36.5, -695.5)
+shape = SubResource("RectangleShape2D_2wvic")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-236, -1401)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-36.5, -695.5)
+shape = SubResource("RectangleShape2D_2wvic")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-236, -1401)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+position = Vector2(1145, -212.76619)
+scale = Vector2(1, 1.0111716)
+polygon = PackedVector2Array(18, -17.999987, 149, -132.99998, 209.99998, -237, 241.99998, -347, 254.99998, -455, 237.99997, -592, 182.99997, -756, 80.99997, -867, 9.999954, -918, 266.99997, -919, 257, -19.999996)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(-236, -1401)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D5"]
+position = Vector2(1145, -212.76619)
+scale = Vector2(1, 1.0111716)
+polygon = PackedVector2Array(245.99998, -340.43073, 161.99998, -398.77887, 161.99997, -532.2874, 249.99997, -594.5914)

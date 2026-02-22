@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxhy6r2ejuty"]
 
 [ext_resource type="Script" uid="uid://bgblwy4x2dyic" path="res://R_Safe_Folder/stapler_pick_up.gd" id="1_u2mos"]
-[ext_resource type="Texture2D" uid="uid://c08iarj6g5qdw" path="res://icon.svg" id="2_jvtea"]
+[ext_resource type="Texture2D" uid="uid://blritdh3iha2h" path="res://Item-Stapler.png" id="2_u2mos"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wknd"]
 
@@ -11,8 +11,10 @@ collision_mask = 0
 script = ExtResource("1_u2mos")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.5417663, 0.89026546)
 shape = SubResource("RectangleShape2D_8wknd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_jvtea")
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_u2mos")

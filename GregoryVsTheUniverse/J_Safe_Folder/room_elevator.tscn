@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dylv3geu5p2a5"]
+[gd_scene load_steps=8 format=3 uid="uid://dylv3geu5p2a5"]
 
+[ext_resource type="Script" uid="uid://bkowf1hokyu6t" path="res://J_Safe_Folder/room_elevator.gd" id="1_8dvtf"]
 [ext_resource type="Texture2D" uid="uid://isasvw327cn4" path="res://Room-Elevator.png" id="1_u246t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dvtf"]
@@ -18,6 +19,7 @@ size = Vector2(30, 200)
 size = Vector2(277, 282)
 
 [node name="room-elevator" type="Node2D"]
+script = ExtResource("1_8dvtf")
 
 [node name="Layout" type="Node2D" parent="."]
 

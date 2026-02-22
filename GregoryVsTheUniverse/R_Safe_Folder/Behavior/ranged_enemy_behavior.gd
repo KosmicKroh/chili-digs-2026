@@ -10,11 +10,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	ranged_cooldown -= delta
-	if (parent.position - Globals.playerPosition).length_squared() < 250000:
+	if (parent.global_position - Globals.playerPosition).length_squared() < 250000:
 		parent.look_at(Globals.playerPosition)
 		parent.velocity = Vector2(0,0)
 		if ranged_cooldown < 0:
 			ranged_cooldown = max_ranged_cooldown
 			parent.attack()
-	if (parent.position - Globals.playerPosition).length_squared() < 50000:
+	if (parent.global_position - Globals.playerPosition).length_squared() < 50000:
 		parent.velocity = -Vector2(parent.speed, 0).rotated(parent.rotation)

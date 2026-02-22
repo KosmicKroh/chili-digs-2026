@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0ympfl72txr3"]
+[gd_scene load_steps=4 format=3 uid="uid://b0ympfl72txr3"]
 
 [ext_resource type="Script" uid="uid://bg6475n3jyml2" path="res://R_Safe_Folder/gun.gd" id="1_14l64"]
-[ext_resource type="Texture2D" uid="uid://c08iarj6g5qdw" path="res://icon.svg" id="2_tcdea"]
+[ext_resource type="Texture2D" uid="uid://blritdh3iha2h" path="res://Item-Stapler.png" id="2_14l64"]
+[ext_resource type="AudioStream" uid="uid://dihhtek6h6r3a" path="res://Audio/Staple.mp3" id="3_tcdea"]
 
 [node name="Gun" type="Node2D"]
 script = ExtResource("1_14l64")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(32, 0)
-texture = ExtResource("2_tcdea")
+scale = Vector2(2, 2)
+texture = ExtResource("2_14l64")
+
+[node name="StapleSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tcdea")
+bus = &"SFX"

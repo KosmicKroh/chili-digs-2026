@@ -10,10 +10,10 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	melee_cooldown -= delta
-	if (parent.position - Globals.playerPosition).length_squared() < 250000:
+	if (parent.global_position - Globals.playerPosition).length_squared() < 250000:
 		parent.look_at(Globals.playerPosition)
 		parent.velocity = Vector2(parent.speed, 0).rotated(parent.rotation)
-	if (parent.position - Globals.playerPosition).length_squared() < 25000:
+	if (parent.global_position - Globals.playerPosition).length_squared() < 25000:
 		if melee_cooldown < 0:
 			parent.attack()
 			melee_cooldown = max_melee_cooldown

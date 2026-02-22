@@ -4,7 +4,8 @@ extends CharacterBody2D
 @export var weapon: Node2D
 
 func _ready() -> void:
-	pass
+	var random = randi() % 5
+	$Sprite2D.texture = Globals.rangedEnemyTextures[random]
 
 func _process(_delta: float) -> void:
 	move_and_slide()

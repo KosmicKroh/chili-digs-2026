@@ -22,6 +22,9 @@ func _process(_delta):
 	else:
 		if Input.is_action_just_pressed("ui_cancel"):
 			$Settings.visible = !$Settings.visible
+			$Settings/MusicVolume.value = Globals.musicVolume
+			$Settings/SFXVolume.value = Globals.sfxVolume
+			$Settings/ScreenShake.value = Globals.screenShake
 		if Globals.stage == 0:
 			AudioServer.get_bus_effect(1,0).cutoff_hz = 2500
 		else:
@@ -88,6 +91,7 @@ func _on_settings_zone_body_exited(_body):
 func _on_settings_zone_body_entered(_body):
 	$Settings/MusicVolume.value = Globals.musicVolume
 	$Settings/SFXVolume.value = Globals.sfxVolume
+	$Settings/ScreenShake.value = Globals.screenShake
 
 func _on_normal_stapler_tree_exited():
 	if find_child("HardStapler") != null:

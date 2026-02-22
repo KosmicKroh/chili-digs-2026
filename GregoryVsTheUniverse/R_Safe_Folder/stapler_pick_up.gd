@@ -6,6 +6,10 @@ extends Area2D
 
 @export var weapon: PackedScene = preload("res://R_Safe_Folder/Gun.tscn")
 
+func _process(_delta):
+	scale = Vector2.ONE * (2.0+sin(Time.get_ticks_msec()/250.0)*0.7)
+
 func execute_event(caller):
 	caller.add_child(weapon.instantiate())
+	caller.has_stapler = true
 	queue_free()

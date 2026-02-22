@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var player: bool = true
 @export var speed = 300.0
+var has_stapler = false
 
 func _physics_process(_delta: float) -> void:
 	Globals.playerPosition = position

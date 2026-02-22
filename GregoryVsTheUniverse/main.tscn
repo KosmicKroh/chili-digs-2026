@@ -38,7 +38,7 @@ position = Vector2(0, -26)
 shape = SubResource("CircleShape2D_lquwl")
 
 [node name="ExampleInteractable" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(124, -1910)
+position = Vector2(147, -1784)
 
 [node name="Stages" type="Node2D" parent="."]
 

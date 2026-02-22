@@ -25,7 +25,7 @@ func _process(delta):
 
 
 func _on_first_elevator_body_entered(body):
-	if "player" in body:
+	if "player" in body and body.has_stapler:
 		Globals.enemyGoal = $Stages/Stage1.enemyCount
 		Globals.killCount = 0
 		$Player.position = $Stages/Stage1.position + Vector2(150,0)

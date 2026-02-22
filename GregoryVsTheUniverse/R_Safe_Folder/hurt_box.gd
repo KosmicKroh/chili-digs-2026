@@ -25,4 +25,6 @@ func _on_area_entered(area: Area2D) -> void:
 				var explosion = load("res://R_Safe_Folder/Explosion.tscn").instantiate()
 				explosion.position = area.get_parent().position
 				area.get_parent().get_parent().add_child(explosion)
+			else:
+				get_tree().change_scene_to_file("res://R_Safe_Folder/Dead.tscn")
 			get_parent().queue_free()# death function is needed

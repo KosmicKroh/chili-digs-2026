@@ -22,7 +22,6 @@ var meleeEnemyTextures: Array = [preload("res://enemySprites/Character-worker6.w
 								preload("res://enemySprites/Character-worker9.webp"),
 								preload("res://enemySprites/Character-worker10.webp")
 								]
-var rollSprites: Array 
 
 func load_data():
 	var config = ConfigFile.new()

@@ -9,7 +9,7 @@ extends Node2D
 var gun_bullet_texture = preload("res://Item-Staple.png")
 
 func fire(Player_Bullet: bool) -> void:
-	var bullet_position = parent.position + bulletspawn.rotated(parent.rotation) * 2
+	var bullet_position = parent.position + bulletspawn.rotated(parent.rotation) * 1.1
 	var new_bullet = Bullet.newBullet(Player_Bullet, bullet_position, parent.rotation)
 	new_bullet.texture = gun_bullet_texture
 	parent.get_parent().add_child(new_bullet)

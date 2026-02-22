@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://uf3dr5l583r5"
+path="res://.godot/imported/The Universe Won.mp3-4d1c872616903cc8dc8f1649abd4dc3b.mp3str"
+
+[deps]
+
+source_file="res://Audio/The Universe Won.mp3"
+dest_files=["res://.godot/imported/The Universe Won.mp3-4d1c872616903cc8dc8f1649abd4dc3b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

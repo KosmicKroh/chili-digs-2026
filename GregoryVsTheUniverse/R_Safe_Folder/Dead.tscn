@@ -1,0 +1,125 @@
+[gd_scene load_steps=11 format=3 uid="uid://cnvbnrau1bk3r"]
+
+[ext_resource type="Script" uid="uid://bgck2oax033ue" path="res://R_Safe_Folder/dead.gd" id="1_lrkxu"]
+[ext_resource type="Texture2D" uid="uid://ieddiad4k6q7" path="res://UI-GameOver.webp" id="2_0w18u"]
+[ext_resource type="AudioStream" uid="uid://uf3dr5l583r5" path="res://Audio/The Universe Won.mp3" id="3_4blhi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pc7n"]
+bg_color = Color(0.38307214, 0.59443617, 0.96049005, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qm8gh"]
+bg_color = Color(0.1747008, 0.23593879, 0.5359557, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.24313726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_larm6"]
+bg_color = Color(0.1747008, 0.23593879, 0.5359557, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.24313726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wshj5"]
+bg_color = Color(0.38307214, 0.59443617, 0.96049005, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrkxu"]
+bg_color = Color(0.98305756, 0.35711467, 0.35474336, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0w18u"]
+bg_color = Color(0.44329184, 0.09928586, 0.17995825, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.24313726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4blhi"]
+bg_color = Color(0.44329184, 0.09928586, 0.17995825, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.24313726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lrkxu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1230.0
+offset_bottom = 693.0
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_0w18u")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -351.0
+offset_top = 123.0
+offset_right = -66.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_2pc7n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qm8gh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_larm6")
+text = " Restart "
+
+[node name="VSeparator" type="HSeparator" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_wshj5")
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_lrkxu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0w18u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4blhi")
+text = "  Quit  "
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4blhi")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="restart_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="quit_pressed"]

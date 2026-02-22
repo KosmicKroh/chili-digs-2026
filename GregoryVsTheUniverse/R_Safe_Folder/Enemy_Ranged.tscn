@@ -16,7 +16,7 @@ weapon = NodePath("Pen")
 scale = Vector2(0.31588134, 0.443862)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.1366807, 2.494314)
+scale = Vector2(1.449783, 1.449783)
 shape = SubResource("CircleShape2D_1ccu5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

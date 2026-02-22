@@ -7,13 +7,18 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Globals.stage == -1:
 		AudioServer.get_bus_effect(1,0).cutoff_hz = 1000
+		$Settings.visible = $SettingsZone.has_overlapping_bodies()
 		$MainCam.position = Vector2(640,360)
-		if Globals.playerPosition.y < -50:
+		if Globals.playerPosition.x < -50:
+			$MainCam.position = Vector2(-640,360)
+		elif Globals.playerPosition.y < -50:
 			$Player.position = Vector2(450,-1200)
 			Globals.stage = 0
+		elif Globals.playerPosition.y > 750:
+			get_tree().quit()
 	else:
 		if Globals.stage == 0:
 			AudioServer.get_bus_effect(1,0).cutoff_hz = 2500
@@ -25,7 +30,8 @@ func _process(delta):
 
 
 func _on_first_elevator_body_entered(body):
-	if "player" in body:
+	if "player" in body and body.has_stapler:
+		$HUD.visible = true
 		Globals.enemyGoal = $Stages/Stage1.enemyCount
 		Globals.killCount = 0
 		$Player.position = $Stages/Stage1.position + Vector2(150,0)
@@ -41,3 +47,41 @@ func _on_stage_1_next_stage():
 	Globals.stage = 2
 	$ElevatorSound.play()
 	$Stages/Stage3.generate()
+
+
+func _on_stage_2_next_stage():
+	Globals.enemyGoal = $Stages/Stage3.enemyCount
+	Globals.killCount = 0
+	$Player.position = $Stages/Stage3.position + Vector2(150,0)
+	Globals.stage = 2
+	$ElevatorSound.play()
+	$Stages/Stage4.generate()
+	$Stages/Stage1.queue_free()
+
+
+func _on_stage_3_next_stage():
+	Globals.enemyGoal = $Stages/Stage4.enemyCount
+	Globals.killCount = 0
+	$Player.position = $Stages/Stage4.position + Vector2(150,0)
+	Globals.stage = 2
+	$ElevatorSound.play()
+	$Stages/Stage5.generate()
+	$Stages/Stage2.queue_free()
+
+
+func _on_stage_4_next_stage():
+	Globals.enemyGoal = $Stages/Stage5.enemyCount
+	Globals.killCount = 0
+	$Player.position = $Stages/Stage5.position + Vector2(150,0)
+	Globals.stage = 2
+	$ElevatorSound.play()
+	$Stages/Stage3.queue_free()
+
+
+func _on_settings_zone_body_exited(_body):
+	Globals.save_data()
+
+
+func _on_settings_zone_body_entered(_body):
+	$Settings/MusicVolume.value = Globals.musicVolume
+	$Settings/SFXVolume.value = Globals.sfxVolume

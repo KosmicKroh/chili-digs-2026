@@ -1,9 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4s51dcewmwfv"]
+[gd_scene load_steps=19 format=3 uid="uid://b4s51dcewmwfv"]
 
 [ext_resource type="FontFile" uid="uid://wsrhq6xolw6f" path="res://WalterTurncoat-Regular.ttf" id="1_frta0"]
 [ext_resource type="Script" uid="uid://c4sohvixk833b" path="res://J_Safe_Folder/hud.gd" id="1_fvc4k"]
 [ext_resource type="Texture2D" uid="uid://dybweeqn0v7l5" path="res://UI-NamePlate1.png" id="3_c2bgv"]
 [ext_resource type="AudioStream" uid="uid://dc6hi0x33r1g8" path="res://Audio/Promotion.mp3" id="4_0ybja"]
+[ext_resource type="Texture2D" uid="uid://l8u51yco5jww" path="res://UI-NamePlate2.png" id="4_1hgap"]
+[ext_resource type="Texture2D" uid="uid://bepxdxccs2vwk" path="res://UI-NamePlate3.png" id="5_pn81n"]
+[ext_resource type="Texture2D" uid="uid://r3qteiptulwx" path="res://UI-NamePlate4.png" id="6_w4t8b"]
+[ext_resource type="Texture2D" uid="uid://bi7so66t3jo5w" path="res://UI-NamePlate5.png" id="7_qnpib"]
+[ext_resource type="Texture2D" uid="uid://bj7del7rvt4nf" path="res://UI-NamePlate6.png" id="8_pn81n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvc4k"]
 bg_color = Color(0.44329184, 0.09928586, 0.17995825, 1)
@@ -39,6 +44,44 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_05guq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_c2bgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1hgap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pn81n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w4t8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qnpib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pn81n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hgap"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(1, 1, 1, 0.24313726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1hgap"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my5hw"]
 bg_color = Color(0.1747008, 0.23593879, 0.5359557, 1)
 corner_radius_top_left = 10
@@ -73,11 +116,12 @@ value = 80.0
 show_percentage = false
 
 [node name="EnemyCounterBar" type="ProgressBar" parent="."]
-offset_left = 496.0
-offset_top = 17.0
-offset_right = 736.0
-offset_bottom = 79.66667
+offset_left = 520.0
+offset_top = 40.0
+offset_right = 760.0
+offset_bottom = 102.66667
 scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(120, 10)
 theme_override_fonts/font = ExtResource("1_frta0")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/background = SubResource("StyleBoxFlat_0ybja")
@@ -86,10 +130,25 @@ step = 1.0
 value = 80.0
 show_percentage = false
 
-[node name="UiNamePlate1" type="Sprite2D" parent="EnemyCounterBar"]
+[node name="NamePlate" type="AnimatedSprite2D" parent="EnemyCounterBar"]
 position = Vector2(118.66666, 31.666674)
 scale = Vector2(0.461111, 0.461111)
-texture = ExtResource("3_c2bgv")
+sprite_frames = SubResource("SpriteFrames_05guq")
+
+[node name="BarCover" type="ProgressBar" parent="."]
+offset_left = 520.0
+offset_top = 40.0
+offset_right = 760.0
+offset_bottom = 102.66667
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(120, 10)
+theme_override_fonts/font = ExtResource("1_frta0")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/background = SubResource("StyleBoxFlat_1hgap")
+theme_override_styles/fill = SubResource("StyleBoxEmpty_1hgap")
+step = 1.0
+value = 80.0
+show_percentage = false
 
 [node name="StaminaBar" type="ProgressBar" parent="."]
 offset_left = 25.0
@@ -100,9 +159,9 @@ theme_override_fonts/font = ExtResource("1_frta0")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/background = SubResource("StyleBoxFlat_my5hw")
 theme_override_styles/fill = SubResource("StyleBoxFlat_wj17m")
-max_value = 2.0
+max_value = 0.5
 step = 0.0
-value = 1.0
+value = 0.5
 show_percentage = false
 
 [node name="PromoteSound" type="AudioStreamPlayer" parent="."]

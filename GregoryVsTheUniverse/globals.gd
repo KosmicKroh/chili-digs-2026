@@ -22,11 +22,24 @@ var meleeEnemyTextures: Array = [preload("res://enemySprites/Character-worker6.w
 								preload("res://enemySprites/Character-worker9.webp"),
 								preload("res://enemySprites/Character-worker10.webp")
 								]
-var rollSprites: Array 
+
+func load_data():
+	var config = ConfigFile.new()
+	var err = config.load("user://gvtu-config.cfg")
+	if err != OK:
+		return
+	musicVolume = config.get_value("Settings","Music-Volume",70.0)
+	sfxVolume = config.get_value("Settings","SFX-Volume",70.0)
+
+func save_data():
+	var config = ConfigFile.new()
+	config.set_value("Settings","Music-Volume",musicVolume)
+	config.set_value("Settings","SFX-Volume",sfxVolume)
+	config.save("user://gvtu-config.cfg")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	load_data()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -37,19 +37,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"rolling",
-"speed": 20.0
+"speed": 10.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_fagkk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 2.1200013)
+scale = Vector2(1.67, 1.67)
 shape = SubResource("CircleShape2D_tymu4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(16, 0)
 sprite_frames = SubResource("SpriteFrames_65vki")
+autoplay = "default"
 
 [node name="PlayerBehavior" parent="." instance=ExtResource("3_0vllw")]
 

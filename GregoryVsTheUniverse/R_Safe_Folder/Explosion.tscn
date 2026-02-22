@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr17ltmb52eqv"]
+[gd_scene load_steps=10 format=3 uid="uid://dclj6p5346pq1"]
 
 [ext_resource type="Texture2D" uid="uid://clhxlbshiaddo" path="res://Item-Explosion.webp" id="1_v6pvd"]
-[ext_resource type="Script" uid="uid://enbd8akmynif" path="res://R_Safe_Folder/Explosion.gd" id="2_wna3d"]
+[ext_resource type="Script" path="res://R_Safe_Folder/Explosion.gd" id="2_wna3d"]
+[ext_resource type="AudioStream" uid="uid://bfsivj1lq4p6x" path="res://Audio/Explosion.mp3" id="3_mksmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wna3d"]
 atlas = ExtResource("1_v6pvd")
@@ -49,3 +50,7 @@ animations = [{
 [node name="Explosion" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_35gg0")
 script = ExtResource("2_wna3d")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mksmn")
+bus = &"SFX"

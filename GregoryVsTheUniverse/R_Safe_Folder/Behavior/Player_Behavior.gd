@@ -1,7 +1,7 @@
 extends Node2D
 
 var parent: CharacterBody2D
-var max_dash_cooldown: float = 0.3
+var max_dash_cooldown: float = 0.5
 var dash_duration: float = 0.03
 var dash_cooldown: float = 0
 var dash_velocity: Vector2 

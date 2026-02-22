@@ -44,7 +44,7 @@ animations = [{
 script = ExtResource("1_fagkk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 2.1200013)
+scale = Vector2(1.67, 1.67)
 shape = SubResource("CircleShape2D_tymu4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

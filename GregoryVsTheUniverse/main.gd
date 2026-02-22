@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Globals.stage == -1:
 		AudioServer.get_bus_effect(1,0).cutoff_hz = 1000
 		$Settings.visible = $SettingsZone.has_overlapping_bodies()

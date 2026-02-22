@@ -14,6 +14,7 @@ config/name="Gregory vs The Universe"
 config/description="Disgruntled employee takes out his frustration on the universe with the power of his trusty stapler in a top-down shooter with procedurally generated offices."
 run/main_scene="uid://cwa32cindg5rg"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/image="uid://c4lc38wnerbtb"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -69,3 +70,4 @@ dash={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

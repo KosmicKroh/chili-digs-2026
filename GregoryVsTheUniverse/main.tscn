@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cwa32cindg5rg"]
+[gd_scene load_steps=18 format=3 uid="uid://cwa32cindg5rg"]
 
 [ext_resource type="PackedScene" uid="uid://0xxlok830twu" path="res://R_Safe_Folder/Player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://7c8e2tsc5t0w" path="res://main.gd" id="1_272bh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dvxojvuxy42li" path="res://Room-Credits.png" id="3_efxa6"]
 [ext_resource type="PackedScene" uid="uid://bxhy6r2ejuty" path="res://R_Safe_Folder/stapler_pick_up.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://b746nsjwc86es" path="res://GregorVsPosterV2.png" id="4_dg77c"]
+[ext_resource type="Texture2D" uid="uid://c4lc38wnerbtb" path="res://DIGS-LOGO.png" id="5_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://bjmkxkxsqewbw" path="res://J_Safe_Folder/stage.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b4s51dcewmwfv" path="res://J_Safe_Folder/hud.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://b88me3jvsqavr" path="res://lobby.tscn" id="7_272bh"]
@@ -50,6 +51,15 @@ offset_right = -810.75
 offset_bottom = 650.0
 texture = ExtResource("4_dg77c")
 expand_mode = 3
+stretch_mode = 5
+
+[node name="DIGS-Logo" type="TextureRect" parent="."]
+offset_left = -224.0
+offset_top = 500.0
+offset_right = -5.0
+offset_bottom = 723.0
+texture = ExtResource("5_ycdy4")
+expand_mode = 1
 stretch_mode = 5
 
 [node name="Walls" type="Node2D" parent="."]
@@ -99,8 +109,8 @@ position = Vector2(147, -1784)
 
 [node name="Stage1" parent="Stages" instance=ExtResource("6_7mycd")]
 position = Vector2(0, -10000)
-roomCount = 6
-enemyCount = 6
+roomCount = 5
+enemyCount = 5
 
 [node name="Stage2" parent="Stages" instance=ExtResource("6_7mycd")]
 position = Vector2(0, -20000)
@@ -118,7 +128,7 @@ enemyCount = 30
 
 [node name="Stage5" parent="Stages" instance=ExtResource("6_7mycd")]
 position = Vector2(0, -50000)
-roomCount = 30
+roomCount = 25
 enemyCount = 50
 
 [node name="Player" parent="." instance=ExtResource("1_0xm2m")]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://374c45i1mojm"]
+[gd_scene load_steps=11 format=3 uid="uid://cnvbnrau1bk3r"]
 
 [ext_resource type="Script" uid="uid://bgck2oax033ue" path="res://R_Safe_Folder/dead.gd" id="1_lrkxu"]
 [ext_resource type="Texture2D" uid="uid://ieddiad4k6q7" path="res://UI-GameOver.webp" id="2_0w18u"]
+[ext_resource type="AudioStream" uid="uid://uf3dr5l583r5" path="res://Audio/The Universe Won.mp3" id="3_4blhi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pc7n"]
 bg_color = Color(0.38307214, 0.59443617, 0.96049005, 1)
@@ -114,6 +115,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_lrkxu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0w18u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4blhi")
 text = "  Quit  "
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4blhi")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="restart_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="quit_pressed"]

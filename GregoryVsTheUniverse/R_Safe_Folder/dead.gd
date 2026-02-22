@@ -11,6 +11,7 @@ func _ready() -> void:
 	Globals.sfxVolume = 70.0
 	Globals.playerPosition = Vector2(0,0)
 	Globals.shakeEffect = 0.0
+	AudioServer.get_bus_effect(1,0).cutoff_hz = 20000
 
 func restart_pressed() -> void:
 	get_tree().change_scene_to_file("main.tscn")
